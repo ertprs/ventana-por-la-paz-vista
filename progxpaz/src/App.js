@@ -1,23 +1,27 @@
 import React from 'react';
-import './App.css';
-import {Home} from "./Components/Home";
-import {ProductPage} from "./Components/ProductPage";
-import {Route, Switch} from "react-router-dom";
-import {Category} from "./Components/Category";
+import './Sass/index.scss';
+import { Home } from './Pages/Home';
+import { ProductPage } from './Pages/ProductPage';
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
+import { Category } from './Components/Category';
+import Header from './Components/Header/Header';
 
 function App() {
   return (
+    <BrowserRouter>
+      <Header></Header>
       <Switch>
-        <Route exact path="/">
+        <Route exact path='/'>
           <Home />
         </Route>
-        <Route path="/product">
+        <Route path='/product'>
           <ProductPage />
         </Route>
-        <Route path="/category">
+        <Route path='/category'>
           <Category />
         </Route>
       </Switch>
+    </BrowserRouter>
   );
 }
 
