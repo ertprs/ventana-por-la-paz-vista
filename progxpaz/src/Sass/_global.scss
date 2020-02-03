@@ -10,3 +10,24 @@
 * {
   font-family: 'Poppins', Helvetica, sans-serif;
 }
+
+.btn-secondary {
+  background-color: #fff;
+  border: 2px solid $blue-100;
+  color: $blue-100;
+}
+
+.btn-primary {
+  background-color: $blue-100;
+  border: 2px solid $blue-100;
+  color: #fff;
+}
+
+.btn-primary:hover {
+  background-color: $blue-200;
+}
+
+.btn-secondary:hover {
+  background-color: $blue-300;
+  border: 2px solid $blue-100;
+}

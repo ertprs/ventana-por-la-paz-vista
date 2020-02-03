@@ -1,4 +1,4 @@
-import React, { Component } from 'react';
+import React, { Component, useState } from 'react';
 import Logo from '../../Assets/images/Grupo 14.png';
 import {
   Navbar,
@@ -32,42 +32,44 @@ function RenderRight(logged) {
 
 export default class Header extends Component {
   render() {
-    const logged = false;
-
     return (
       <header>
         <Navbar expand='lg'>
-          <div className='container'>
-            <NavbarBrand href='/'>
-              <img
-                className='logo'
-                src={Logo}
-                alt='Logo de ventana por la paz'
-              />
-            </NavbarBrand>
-            <Nav navbar>
-              <NavItem>
-                <InputGroup>
-                  <InputGroupAddon addonType='prepend'>
-                    <Label htmlFor='searchbar' hidden></Label>
-                    <Input
-                      placeholder='Qué estás buscando hoy?'
-                      id='searchbar'
-                    ></Input>
-                  </InputGroupAddon>
-                  <select className='custom-select' name='filter'>
-                    <option value='tipo'>tipo</option>
-                  </select>
-                  <InputGroupAddon addonType='append'>
-                    <button type='submit'>F</button>
-                  </InputGroupAddon>
-                </InputGroup>
-              </NavItem>
-            </Nav>
-            <NavbarToggler>
-              <Collapse></Collapse>
-            </NavbarToggler>
-          </div>
+          <NavbarBrand href='/'>
+            <img className='logo' src={Logo} alt='Logo de ventana por la paz' />
+          </NavbarBrand>
+          <Nav navbar className='mr-auto'>
+            <NavItem>
+              <InputGroup>
+                <InputGroupAddon addonType='prepend'>
+                  <Label htmlFor='searchbar' hidden></Label>
+                  <Input
+                    placeholder='Qué estás buscando hoy?'
+                    className='searchbar-input'
+                    id='searchbar'
+                  ></Input>
+                </InputGroupAddon>
+                <select className='custom-select' name='filter'>
+                  <option value='tipo'>tipo</option>
+                </select>
+                <InputGroupAddon addonType='append'>
+                  <Button
+                    type='submit'
+                    color='primary'
+                    className='searchbar-button'
+                  >
+                    F
+                  </Button>
+                </InputGroupAddon>
+              </InputGroup>
+            </NavItem>
+          </Nav>
+          <Nav navbar>
+            <Button className='mr-2' color='primary'>
+              Login
+            </Button>
+            <Button color='secondary'>Crear Cuenta</Button>
+          </Nav>
         </Navbar>
       </header>
     );
