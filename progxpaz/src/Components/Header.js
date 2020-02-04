@@ -1,37 +1,17 @@
-import React, { Component, useState } from 'react';
-import Logo from '../../Assets/images/Grupo 14.png';
-import {
-  Navbar,
-  NavbarBrand,
-  Nav,
-  NavbarToggler,
-  NavItem,
-  Collapse,
-  Form,
-  FormGroup,
-  InputGroup,
-  InputGroupAddon,
-  Button,
-  Input,
-  Label,
-  Modal,
-  ModalHeader,
-  ModalBody,
-} from 'reactstrap';
+import React, { Component } from 'react';
+import Logo from '../Assets/images/logo.png';
+import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import { Navbar, NavbarBrand, Nav, NavItem, InputGroup, InputGroupAddon, Button, Input, Label} from 'reactstrap';
 
-function RenderRight(logged) {
-  if (!logged) {
-    return (
-      <div className='anonimus'>
-        <h1>Hola</h1>
-      </div>
-    );
-  }
-  return <h3>Estoy logeado</h3>;
-}
+export class Header extends Component {
 
-export default class Header extends Component {
+  state = {
+    logged : false
+  };
+
   render() {
+    let {logged} = this.state;
+
     return (
       <header>
         <Navbar expand='lg'>
@@ -42,12 +22,12 @@ export default class Header extends Component {
             <NavItem>
               <InputGroup>
                 <InputGroupAddon addonType='prepend'>
-                  <Label htmlFor='searchbar' hidden></Label>
+                  <Label htmlFor='searchbar' hidden> </Label>
                   <Input
-                    placeholder='Qué estás buscando hoy?'
+                    placeholder='¿ Qué estás buscando hoy ?'
                     className='searchbar-input'
                     id='searchbar'
-                  ></Input>
+                  > </Input>
                 </InputGroupAddon>
                 <select className='custom-select' name='filter'>
                   <option value='tipo'>tipo</option>
@@ -58,20 +38,33 @@ export default class Header extends Component {
                     color='primary'
                     className='searchbar-button'
                   >
-                    F
+                    <FontAwesomeIcon icon={'search'} />
                   </Button>
                 </InputGroupAddon>
               </InputGroup>
             </NavItem>
           </Nav>
-          <Nav navbar>
-            <Button className='mr-2' color='primary'>
-              Login
-            </Button>
-            <Button color='secondary'>Crear Cuenta</Button>
-          </Nav>
+
+          {logged? this.UserHeader() : this.AnonHeader()}
+
         </Navbar>
       </header>
     );
   }
+
+  AnonHeader() {
+    return(<>
+      <Nav navbar>
+        <Button className='mr-2' color='primary'> Login </Button>
+        <Button color='secondary'>Sign Up</Button>
+      </Nav>
+    </>);
+  }
+
+  UserHeader() {
+    return(<>
+
+    </>);
+  }
+
 }
