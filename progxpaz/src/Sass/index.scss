@@ -1,9 +1,7 @@
-// Common
 @import 'variables';
 @import 'global';
 @import 'forms';
 
-//Components
 @import 'header';
 
 .like-button {
@@ -100,10 +98,6 @@
   }
 }
 
-.flex-row {
-  display: flex;
-}
-
 .best-sellers {
   margin-right: 2%;
   margin-left: 2%;
@@ -125,4 +119,35 @@
 
     }
   }
+}
+
+.log-in {
+  width: 400px;
+  height: 460px;
+  border-radius: 5px;
+  background-color: white;
+}
+
+.screen-size {
+  width: 100vw;
+  height: 100vh;
+  position: absolute;
+  top: 0;
+  left: 0;
+}
+
+.blue-bkg {
+  background-color: #3898ff;
+  opacity: 0.5;
+}
+
+.abs-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%,-50%);
+}
+
+.flex-row {
+  display: flex;
 }
