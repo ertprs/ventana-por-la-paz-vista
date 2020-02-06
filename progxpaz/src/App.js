@@ -1,9 +1,9 @@
 import React from 'react';
 import './Sass/index.scss';
 
+import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { Home } from './Pages/Home';
 import { ProductPage } from './Pages/ProductPage';
-import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { Category } from './Components/Category';
 import { Header } from './Components/Header';
 
@@ -14,7 +14,7 @@ import { faHeart as heartStroke } from '@fortawesome/free-regular-svg-icons'
 
 library.add(fab, search, heartFill, heartStroke);
 
-function App() {
+export default function App() {
   return (
       <>
         <Header />
@@ -35,5 +35,3 @@ function App() {
     </ >
   );
 }
-
-export default App;
