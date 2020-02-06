@@ -1,7 +1,7 @@
 import React, { Component } from 'react';
 import Logo from '../Assets/images/logo.png';
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
-import { Navbar, NavbarBrand, Nav, NavItem, InputGroup, InputGroupAddon, Button, Input, Label} from 'reactstrap';
+import {Button} from 'reactstrap';
+import {Search} from "./Search";
 
 export class Header extends Component {
 
@@ -13,58 +13,35 @@ export class Header extends Component {
     let {logged} = this.state;
 
     return (
-      <header>
-        <Navbar expand='lg'>
-          <NavbarBrand href='/'>
-            <img className='logo' src={Logo} alt='Logo de ventana por la paz' />
-          </NavbarBrand>
-          <Nav navbar className='mr-auto'>
-            <NavItem>
-              <InputGroup>
-                <InputGroupAddon addonType='prepend'>
-                  <Label htmlFor='searchbar' hidden> </Label>
-                  <Input
-                    placeholder='¿ Qué estás buscando hoy ?'
-                    className='searchbar-input'
-                    id='searchbar'
-                  > </Input>
-                </InputGroupAddon>
-                <select className='custom-select' name='filter'>
-                  <option value='tipo'>tipo</option>
-                </select>
-                <InputGroupAddon addonType='append'>
-                  <Button
-                    type='submit'
-                    color='primary'
-                    className='searchbar-button'
-                  >
-                    <FontAwesomeIcon icon={'search'} />
-                  </Button>
-                </InputGroupAddon>
-              </InputGroup>
-            </NavItem>
-          </Nav>
+      <div className={'header'}>
 
-          {logged? this.UserHeader() : this.AnonHeader()}
+        <div className={'flex-row'}>
+          <a href='/' className={'logo'}>
+            <img src={Logo} alt='Logo de ventana por la paz' />
+          </a>
 
-        </Navbar>
-      </header>
+          <Search />
+        </div>
+
+        {logged? this.UserHeader() : this.AnonHeader()}
+
+      </div>
     );
   }
 
   AnonHeader() {
-    return(<>
-      <Nav navbar>
+    return(
+      <div className={'user-header'}>
         <Button className='mr-2' color='primary'> Login </Button>
         <Button color='secondary'>Sign Up</Button>
-      </Nav>
-    </>);
+      </div>
+    );
   }
 
   UserHeader() {
-    return(<>
+    return(<div className={'user-header'}>
 
-    </>);
+    </div>);
   }
 
 }

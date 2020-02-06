@@ -16,6 +16,7 @@ export class BestSellers extends Component {
                     <ProductCard />
                     <ProductCard />
                     <ProductCard />
+                    <ProductCard />
 
                 </div>
             </div>

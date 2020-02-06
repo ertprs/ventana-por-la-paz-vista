@@ -1,25 +1,50 @@
-.logo {
-  height: 54.23px;
-  width: 37.54px;
-  margin: 0 20px;
-}
+.header {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  padding: 2%;
 
-.searchbar-input {
-  border-top-right-radius: 0;
-  border-bottom-right-radius: 0;
-}
+  .logo {
+    padding-left: 1%;
+    height: 54.23px;
+    width: 37.54px;
+    margin: 0 20px;
+  }
 
-.form-control > select {
-  border-left-color: white;
-  border-right-color: white;
-  border-radius: 0;
-}
+  .user-header {
+    display: flex;
+    align-items: center;
 
-.searchbar-button {
-  width: 40px;
-  border-left: 0;
-  border-radius: 0 6px 6px 0;
-  background-color: $blue-100;
-  color: white;
-  border: none;
+  }
+
+
+  .search-bar {
+    display: flex;
+    align-items: center;
+    height: 50px;
+
+    .input {
+      border-top-right-radius: 0;
+      border-bottom-right-radius: 0;
+      width: 400px;
+      height: 100%;
+    }
+
+    .type-select {
+      width: 200px;
+      border-radius: 0;
+      height: 100%;
+    }
+
+    .button {
+      width: 50px;
+      border-left: 0;
+      border-radius: 0 6px 6px 0;
+      padding: 2%;
+      background-color: $blue-100;
+      color: white;
+      border: none;
+      height: 100%;
+    }
+  }
 }
