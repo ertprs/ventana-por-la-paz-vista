@@ -20,7 +20,7 @@
   font-style: normal;
 }
 
-html {
+html, body {
   font-family: 'Poppins', Helvetica, sans-serif;
   // Este calculo tira 2px para 1920px, y un valor semejante para otras dimensiones
   //font-size: (100vw / 1920px) * 2px;

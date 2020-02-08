@@ -1,13 +1,21 @@
 import React, {Component} from 'react';
 import {ProductCard} from "./ProductCard";
 
-export class BestSellers extends Component {
+export class Section extends Component {
+
+    state = {
+        title : '',
+        link : ''
+    }
+
     render() {
+        let {title, link} = this.state;
+
         return (
-            <div className={'best-sellers'}>
+            <div className={'section'}>
                 <div className={'title'}>
                     <span className={'main'}> Lo Mas Vendido </span>
-                    <span className={'sub'}> ver mas </span>
+                    <span className={'link'}> ver mas </span>
                 </div>
                 <div className={'flex-row'}>
 

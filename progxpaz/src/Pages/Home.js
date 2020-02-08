@@ -1,10 +1,10 @@
 import React, { Component } from 'react';
-import {BestSellers} from "../Components/BestSellers";
+import {Section} from "../Components/Section";
 
 export class Home extends Component {
   render() {
     return (<>
-        <BestSellers />
+        <Section />
     </>);
   }
 }
