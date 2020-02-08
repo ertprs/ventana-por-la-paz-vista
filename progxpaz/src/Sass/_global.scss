@@ -4,11 +4,27 @@
   src: url(../Assets/fonts/Poppins-Regular.ttf) format('truetype');
   font-weight: 400;
   font-style: normal;
-  display: block;
 }
 
-* {
+@font-face {
+  font-family: 'Poppins';
+  src: url(../Assets/fonts/Poppins-SemiBold.ttf) format('truetype');
+  font-weight: 600;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'Oswald';
+  src: url(../Assets/fonts/Oswald-Medium.ttf) format('truetype');
+  font-weight: 400;
+  font-style: normal;
+}
+
+html {
   font-family: 'Poppins', Helvetica, sans-serif;
+  // Este calculo tira 2px para 1920px, y un valor semejante para otras dimensiones
+  //font-size: (100vw / 1920px) * 2px;
+  font-size: 2px;
 }
 
 .btn-secondary {
