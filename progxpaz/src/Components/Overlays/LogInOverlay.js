@@ -1,5 +1,6 @@
 import React, {Component} from 'react';
 import {BlackOut} from "./BlackOut";
+import {CheckBox} from "./CheckBox";
 
 export class LogIn extends Component {
 
@@ -21,20 +22,26 @@ export class LogIn extends Component {
                     </div>
 
                     <div className={'label'}>
-                        <div>
+                        <span>
                             Contraseña
-                        </div>
-                        <div className={'blue-text'}>
-                            Forgot Password
-                        </div>
+                        </span>
+                        <span className={'blue-text'}>
+                            Olvidé mi contraseña
+                        </span>
                     </div>
 
                     <div className={'input'}>
                     </div>
 
+                    <div>
+                        <CheckBox text={'Remember me'}/>
+                    </div>
+
                     <div className={'white-text blue-bkg bold button'}>
                         Log In
                     </div>
+
+
 
                     <div>
                         <div>
