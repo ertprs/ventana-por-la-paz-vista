@@ -1,8 +1,8 @@
 import React, {Component} from 'react';
-import {BlackOut} from "./BlackOut";
-import {CheckBox} from "./CheckBox";
+import {BlackOut} from "../BlackOut";
+import {CheckBox} from "../CheckBox";
 
-export class LogIn extends Component {
+export class LogInOverlay extends Component {
 
     render() {
         return (

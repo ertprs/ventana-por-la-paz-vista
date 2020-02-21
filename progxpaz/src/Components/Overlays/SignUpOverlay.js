@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export class SignUp extends Component {
+export class SignUpOverlay extends Component {
     render() {
         return (
             <div>
