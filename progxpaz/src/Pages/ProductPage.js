@@ -3,6 +3,6 @@ import ProductDescription from '../Components/ProductDescription';
 
 export class ProductPage extends Component {
   render() {
-    return <ProductDescription></ProductDescription>;
+    return <ProductDescription />;
   }
 }
