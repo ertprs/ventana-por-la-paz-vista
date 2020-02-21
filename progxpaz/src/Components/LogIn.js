@@ -12,27 +12,24 @@ export class LogIn extends Component {
                         Iniciar Sesión
                     </div>
 
-                    <div>
-                        <div className={'label'}>
-                            Correo Electronico
-                        </div>
-                        <div className={'input'}>
+                    <div className={'label'}>
+                        Correo Electronico
+                    </div>
 
+                    <div className={'input'}>
+
+                    </div>
+
+                    <div className={'label'}>
+                        <div>
+                            Contraseña
+                        </div>
+                        <div className={'blue-text'}>
+                            Forgot Password
                         </div>
                     </div>
 
-                    <div>
-                        <div className={'label'}>
-                            <div>
-                                Contraseña
-                            </div>
-                            <div className={'blue-text'}>
-                                Forgot Password
-                            </div>
-                        </div>
-                        <div className={'input'}>
-
-                        </div>
+                    <div className={'input'}>
                     </div>
 
                     <div className={'white-text blue-bkg bold button'}>
