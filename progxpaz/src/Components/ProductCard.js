@@ -9,23 +9,17 @@ export function ProductCard({
   discountPrice,
   discountPercentage,
 }) {
-  const productName = name;
-  const productPrice = price;
-  const productCategory = category;
-  const productDiscount = discountPrice;
-  const productDiscountPer = discountPercentage;
-
   return (
     <div className={'product-card'} style={{ backgroundImage: img }}>
       <div className={'row-body'}>
-        <div className={'prod-name'}>{productName}</div>
+        <div className={'prod-name'}>{name}</div>
 
         <div className={'prod-info'}>
-          <div className={'info-price-orig'}>COP {productPrice}</div>
+          <div className={'info-price-orig'}>COP {price}</div>
 
-          <div className={'info-price-new'}>COP {productDiscount}</div>
+          <div className={'info-price-new'}>COP {discountPrice}</div>
 
-          <div className={'info-price-perc'}>{productDiscountPer}% OFF</div>
+          <div className={'info-price-perc'}>{discountPercentage}% OFF</div>
         </div>
       </div>
 
@@ -37,7 +31,7 @@ export function ProductCard({
         <div className={'row-img'}/>
 
         <div className={'row-cat'}>
-          <div className={'cat-tag'}>{productCategory}</div>
+          <div className={'cat-tag'}>{category}</div>
         </div>
       </div>
     </div>
