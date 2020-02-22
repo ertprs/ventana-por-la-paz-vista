@@ -1,30 +1,27 @@
-import React, {Component} from 'react';
-import {ProductCard} from "./ProductCard";
+import React, { Component } from 'react';
+import { ProductCard } from './ProductCard';
 
-export class Section extends Component {
+export default class Section extends Component {
+  state = {
+    title: '',
+    link: '',
+  };
 
-    state = {
-        title : '',
-        link : ''
-    }
+  render() {
+    let { title, link } = this.state;
 
-    render() {
-        let {title, link} = this.state;
-
-        return (
-            <div className={'section'}>
-                <div className={'title'}>
-                    <span className={'main'}> Lo Mas Vendido </span>
-                    <span className={'link'}> ver mas </span>
-                </div>
-                <div className={'flex-row'}>
-
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-
-                </div>
-            </div>
-        );
-    }
+    return (
+      <div className={'section'}>
+        <div className={'title'}>
+          <span className={'main'}> Lo Mas Vendido </span>
+          <span className={'link'}> ver mas </span>
+        </div>
+        <div className={'flex-row'}>
+          <ProductCard />
+          <ProductCard />
+          <ProductCard />
+        </div>
+      </div>
+    );
+  }
 }

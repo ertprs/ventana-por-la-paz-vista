@@ -1,10 +1,12 @@
 import React, { Component } from 'react';
-import {Section} from "../Components/Section";
+import Section from '../Components/Section';
 
-export class Home extends Component {
+export default class Home extends Component {
   render() {
-    return (<>
+    return (
+      <>
         <Section />
-    </>);
+      </>
+    );
   }
 }
