@@ -68,15 +68,16 @@ export class Header extends Component {
     return (
       <div className={'user-header'}>
         <Button onClick={this.setLogOverlay} className='mr-2' color='primary'>
-          {' '}
-          Login{' '}
+          Login
         </Button>
-        <Button color='secondary'>Sign Up</Button>
+        <Button onClick={this.setSignOverlay} className='mr-2' color='secondary'>
+          Sign Up
+        </Button>
       </div>
     );
   }
 
   UserHeader() {
-    return <div className={'user-header'}></div>;
+    return <div className={'user-header'}/>;
   }
 }
