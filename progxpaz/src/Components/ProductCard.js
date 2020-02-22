@@ -1,5 +1,5 @@
-import React, {Component} from 'react';
-import {img} from '../Assets/images/img.jpg';
+import React from 'react';
+import img from '../Assets/images/img.jpg';
 import {LikeButton} from "./Objects/LikeButton";
 
 export function ProductCard({
