@@ -1,5 +1,4 @@
 import React from 'react';
-import { Section } from './Section';
 
 export default function ProductDescription() {
   return (
@@ -7,14 +6,14 @@ export default function ProductDescription() {
       <div className='container expand-md'>
         <div className='row align-items-center'>
           <div className='col-xs-1 flex-column'>
-            <div className='box'></div>
-            <div className='box'></div>
-            <div className='box'></div>
-            <div className='box'></div>
-            <div className='box'></div>
+            <div className='box'/>
+            <div className='box'/>
+            <div className='box'/>
+            <div className='box'/>
+            <div className='box'/>
           </div>
           <div className='col-xs-5 ml-5'>
-            <div className='carousel'></div>
+            <div className='carousel'/>
           </div>
           <div className='col-md-6 col-sm-12 align-self-start mt-3'>
             <h1>Nombre del producto</h1>

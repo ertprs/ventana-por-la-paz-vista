@@ -4,8 +4,6 @@ export class BlackOut extends Component {
 
     sendCancel = (e) => {
 
-            //this.props.sendCancel();
-
     };
 
     render() {

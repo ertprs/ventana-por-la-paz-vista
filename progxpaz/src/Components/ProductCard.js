@@ -34,7 +34,7 @@ export function ProductCard({
           <LikeButton />
         </div>
 
-        <div className={'row-img'}></div>
+        <div className={'row-img'}/>
 
         <div className={'row-cat'}>
           <div className={'cat-tag'}>{productCategory}</div>
