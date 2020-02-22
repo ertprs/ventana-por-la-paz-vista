@@ -9,10 +9,10 @@ import { Header } from './Components/Header';
 
 import { library } from '@fortawesome/fontawesome-svg-core'
 import { fab } from '@fortawesome/free-brands-svg-icons'
-import { faSearch as search, faHeart as heartFill } from '@fortawesome/free-solid-svg-icons'
+import { faSearch as search, faHeart as heartFill, faSquare as square, faCheckSquare as check, faEye as eye, faEyeSlash as eyeSlash} from '@fortawesome/free-solid-svg-icons'
 import { faHeart as heartStroke } from '@fortawesome/free-regular-svg-icons'
 
-library.add(fab, search, heartFill, heartStroke);
+library.add(fab, search, heartFill, heartStroke, check, square, eye, eyeSlash);
 
 export default function App() {
   return (
