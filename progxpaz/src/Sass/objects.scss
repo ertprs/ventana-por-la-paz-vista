@@ -1,0 +1,56 @@
+
+.like-button {
+  border-radius: 50%;
+  width: 50px;
+  height: 50px;
+  background-color: #eee;
+  cursor: pointer;
+  transition: 0.2s;
+  box-shadow: 0 0 10px -2px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  &:active {
+    background-color: #e3e3e3;
+    box-shadow: 0 0 10px -5px;
+  }
+
+  .icon {
+    width: 18px;
+    height: 18px;
+    margin: 25%;
+    transition: 0.2s;
+
+    &.taken {
+      color: #d8343d;
+      transform: scale(1.5);
+    }
+  }
+}
+
+.check-box {
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+  cursor: pointer;
+
+  .icon {
+    width: 20px;
+    height: 20px;
+    color: #007BFF;
+    border-radius: 4px;
+    display: inline-block;
+    margin-right: 5px;
+    margin-bottom: 0;
+  }
+
+  .text {
+
+  }
+}
+
+.input-field {
+  border-radius: 2px;
+}
