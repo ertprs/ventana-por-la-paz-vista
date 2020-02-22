@@ -2,7 +2,7 @@ import React from 'react';
 import './Sass/index.scss';
 
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import { Home } from './Pages/Home';
+import Home from './Pages/Home';
 import { ProductPage } from './Pages/ProductPage';
 import { Category } from './Components/Category';
 import { Header } from './Components/Header';
@@ -16,22 +16,20 @@ library.add(fab, search, heartFill, heartStroke, check, square, eye, eyeSlash);
 
 export default function App() {
   return (
-      <>
-        <Header />
+    <>
+      <Header />
 
-        <BrowserRouter>
-          <Switch>
-            <Route exact path='/'>
-              <Home />
-            </Route>
-            <Route path='/product'>
-              <ProductPage />
-            </Route>
-            <Route path='/category'>
-              <Category />
-            </Route>
-          </Switch>
-        </BrowserRouter>
-    </ >
+      <BrowserRouter>
+        <Switch>
+          <Route exact path='/' component={Home}></Route>
+          <Route path='/product'>
+            <ProductPage />
+          </Route>
+          <Route path='/category'>
+            <Category />
+          </Route>
+        </Switch>
+      </BrowserRouter>
+    </>
   );
 }

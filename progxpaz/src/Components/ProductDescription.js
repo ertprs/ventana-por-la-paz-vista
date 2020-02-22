@@ -1,4 +1,5 @@
 import React from 'react';
+import { Section } from './Section';
 
 export default function ProductDescription() {
   return (
@@ -17,6 +18,7 @@ export default function ProductDescription() {
           </div>
           <div className='col-md-6 col-sm-12 align-self-start mt-3'>
             <h1>Nombre del producto</h1>
+            <h3>$35.00</h3>
             <p>
               Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere
               voluptate, sint quo beatae perferendis ipsum fugiat sapiente velit

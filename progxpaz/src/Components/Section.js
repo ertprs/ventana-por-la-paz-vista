@@ -1,7 +1,11 @@
-import React, {Component} from 'react';
-import {ProductCard} from "./ProductCard";
+import React, { Component } from 'react';
+import { ProductCard } from './ProductCard';
 
-export class Section extends Component {
+export default class Section extends Component {
+  state = {
+    title: '',
+    link: '',
+  };
 
     state = {
         title : '',
@@ -10,21 +14,36 @@ export class Section extends Component {
 
     render() {
         //let {title, link} = this.state;
-
-        return (
-            <div className={'section'}>
-                <div className={'title'}>
-                    <span className={'main'}> Lo Mas Vendido </span>
-                    <span className={'link'}> ver mas </span>
-                </div>
-                <div className={'flex-row'}>
-
-                    <ProductCard />
-                    <ProductCard />
-                    <ProductCard />
-
-                </div>
-            </div>
-        );
-    }
+    return (
+      <div className={'section'}>
+        <div className={'title'}>
+          <span className={'main'}> Lo Mas Vendido </span>
+          <span className={'link'}> ver mas </span>
+        </div>
+        <div className={'flex-row'}>
+          <ProductCard
+            name='Blusa'
+            price={30000}
+            category='Ropa'
+            discountPrice={15000}
+            discountPercentage={50}
+          />
+          <ProductCard
+            name='Zapatos'
+            price={60000}
+            category='Ropa'
+            discountPrice={54000}
+            discountPercentage={10}
+          />
+          <ProductCard
+            name='Correa'
+            price={20000}
+            category='Ropa'
+            discountPrice={15000}
+            discountPercentage={20}
+          />
+        </div>
+      </div>
+    );
+  }
 }
