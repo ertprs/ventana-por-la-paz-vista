@@ -1,51 +1,45 @@
-import React, {Component} from 'react';
-import {img} from '../Assets/images/img.jpg';
-import {LikeButton} from "./LikeButton";
+import React from 'react';
+import { img } from '../Assets/images/img.jpg';
+import { LikeButton } from './LikeButton';
 
-export class ProductCard extends Component {
+export function ProductCard({
+  name,
+  price,
+  category,
+  discountPrice,
+  discountPercentage,
+}) {
+  const productName = name;
+  const productPrice = price;
+  const productCategory = category;
+  const productDiscount = discountPrice;
+  const productDiscountPer = discountPercentage;
 
-    state = {
-      info : []
-    };
+  return (
+    <div className={'product-card'} style={{ backgroundImage: img }}>
+      <div className={'row-body'}>
+        <div className={'prod-name'}>{productName}</div>
 
-    render() {
-        return (
-            <div className={'product-card'} style={{backgroundImage : img}}>
-                <div className={'row-body'}>
-                    <div className={'prod-name'}>
-                        PRODUCT NAME
-                    </div>
+        <div className={'prod-info'}>
+          <div className={'info-price-orig'}>COP {productPrice}</div>
 
-                    <div className={'prod-info'}>
-                        <div className={'info-price-orig'}>
-                            COP 30.000
-                        </div>
+          <div className={'info-price-new'}>COP {productDiscount}</div>
 
-                        <div className={'info-price-new'}>
-                            COP 15.000
-                        </div>
+          <div className={'info-price-perc'}>{productDiscountPer}% OFF</div>
+        </div>
+      </div>
 
-                        <div className={'info-price-perc'}>
-                            50% OFF
-                        </div>
-                    </div>
-                </div>
+      <div className={'row-top'}>
+        <div className={'row-like'}>
+          <LikeButton />
+        </div>
 
-                <div className={'row-top'}>
-                    <div className={'row-like'}>
-                        <LikeButton/>
-                    </div>
+        <div className={'row-img'}></div>
 
-                    <div className={'row-img'}>
-                    </div>
-
-                    <div className={'row-cat'}>
-                        <div className={'cat-tag'}>
-                            CATEGORIA
-                        </div>
-                    </div>
-                </div>
-            </div>
-        );
-    }
+        <div className={'row-cat'}>
+          <div className={'cat-tag'}>{productCategory}</div>
+        </div>
+      </div>
+    </div>
+  );
 }

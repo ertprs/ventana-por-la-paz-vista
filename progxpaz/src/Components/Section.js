@@ -17,9 +17,27 @@ export default class Section extends Component {
           <span className={'link'}> ver mas </span>
         </div>
         <div className={'flex-row'}>
-          <ProductCard />
-          <ProductCard />
-          <ProductCard />
+          <ProductCard
+            name='Blusa'
+            price={30000}
+            category='Ropa'
+            discountPrice={15000}
+            discountPercentage={50}
+          />
+          <ProductCard
+            name='Zapatos'
+            price={60000}
+            category='Ropa'
+            discountPrice={54000}
+            discountPercentage={10}
+          />
+          <ProductCard
+            name='Correa'
+            price={20000}
+            category='Ropa'
+            discountPrice={15000}
+            discountPercentage={20}
+          />
         </div>
       </div>
     );
