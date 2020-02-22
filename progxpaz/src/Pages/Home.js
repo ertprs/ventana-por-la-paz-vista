@@ -5,7 +5,7 @@ export default class Home extends Component {
   render() {
     return (
       <>
-        <Section />
+        <Section title={'Lo Mas Vendido'}/>
       </>
     );
   }

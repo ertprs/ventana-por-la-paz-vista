@@ -8,13 +8,7 @@ export class ProductPage extends Component {
     return (
     <>
         <ProductDescription />
-        <div className='container'>
-            <div className='row'>
-                <div className='col-xs-12'>
-                    <Section />
-                </div>
-            </div>
-        </div>
+        <Section title={'Productos parecidos'} />
     </>
     );
   }

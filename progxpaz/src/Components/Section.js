@@ -8,6 +8,14 @@ export default class Section extends Component {
         link : ''
     };
 
+
+    componentDidMount() {
+        this.setState({
+            title : this.props.title,
+            link : this.props.link
+        })
+    }
+
     render() {
         let {title} = this.state;
 
