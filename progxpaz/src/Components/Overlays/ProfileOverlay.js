@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 
-export class Profile extends Component {
+export class ProfileOverlay extends Component {
     render() {
         return (
             <div>

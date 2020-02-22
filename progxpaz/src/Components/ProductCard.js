@@ -1,6 +1,6 @@
 import React, {Component} from 'react';
 import {img} from '../Assets/images/img.jpg';
-import {LikeButton} from "./LikeButton";
+import {LikeButton} from "./Objects/LikeButton";
 
 export class ProductCard extends Component {
 

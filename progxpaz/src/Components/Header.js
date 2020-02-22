@@ -2,7 +2,10 @@ import React, { Component } from 'react';
 import Logo from '../Assets/images/logo.png';
 import { Button } from 'reactstrap';
 import { Search } from './Search';
-import { LogIn } from './LogIn';
+import { LogInOverlay } from './Overlays/LogInOverlay';
+import {BlackOut} from "./Overlays/BlackOut";
+import {SignUpOverlay} from "./Overlays/SignUpOverlay";
+import {ProfileOverlay} from "./Overlays/ProfileOverlay";
 
 export class Header extends Component {
   state = {
@@ -10,19 +13,26 @@ export class Header extends Component {
     overlay: '',
   };
 
-  setProfOverlay = () => {
+  setNoOverlay = (e) => {
+
+  };
+
+  setProfOverlay = (e) => {
+
     this.setState({
       overlay: 'p',
     });
   };
 
-  setLogOverlay = () => {
+  setLogOverlay = (e) => {
+
     this.setState({
       overlay: 'li',
     });
   };
 
-  setSignOverlay = () => {
+  setSignOverlay = (e) => {
+
     this.setState({
       overlay: 'su',
     });
@@ -33,7 +43,12 @@ export class Header extends Component {
 
     return (
       <>
-        {overlay === 'li' ? <LogIn /> : <> </>}
+        {overlay === ''? <> </> : <> <BlackOut sendCancel={this.setNoOverlay()}/>
+          {overlay === 'li' ?  <LogInOverlay /> : <> </>}
+          {overlay === 'su' ?  <SignUpOverlay /> : <> </>}
+          {overlay === 'p' ?  <ProfileOverlay /> : <> </>}
+          </>
+        }
         <div className={'header'}>
           <div className={'flex-row'}>
             <a href='/' className={'logo'}>

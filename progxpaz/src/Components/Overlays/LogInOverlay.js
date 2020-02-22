@@ -1,13 +1,13 @@
 import React, {Component} from 'react';
-import {BlackOut} from "../BlackOut";
-import {CheckBox} from "../CheckBox";
+import {BlackOut} from "./BlackOut";
+import {CheckBox} from "../Objects/CheckBox";
+import {InputField} from "../Objects/InputField";
 
 export class LogInOverlay extends Component {
 
     render() {
         return (
             <>
-                <BlackOut />
                 <div className={'abs-center log-in'}>
                     <div className={'bold title'}>
                         Iniciar Sesión
@@ -30,12 +30,11 @@ export class LogInOverlay extends Component {
                         </span>
                     </div>
 
-                    <div className={'input'}>
-                    </div>
+                    <InputField />
 
-                    <div>
-                        <CheckBox text={'Remember me'}/>
-                    </div>
+
+                    <CheckBox text={'Remember me'}/>
+
 
                     <div className={'white-text blue-bkg bold button'}>
                         Log In
