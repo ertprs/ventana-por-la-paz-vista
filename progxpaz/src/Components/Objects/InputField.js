@@ -8,14 +8,25 @@ export class InputField extends Component {
         visible : false
     };
 
-    
+    componentDidMount() {
+        this.setState({
+            isPassword : this.props.password,
+        })
+    }
+
+    setInputFocus= () => {
+        this.trueInput.focus();
+    };
 
     render() {
         let {isPassword, visible} = this.state;
 
         return (
-            <div className={'input-field'}>
-                <input className={'inner-input'} type={isPassword? "password" : "text"}>
+            <div className={'input-field'} onClick={this.setInputFocus}>
+                <input
+                    ref={(input) => { this.trueInput = input; }}
+                    className={'inner-input'}
+                    type={isPassword? "password" : "text"}>
                 </input>
 
                 {isPassword ?
@@ -23,7 +34,7 @@ export class InputField extends Component {
                         {visible ?
                             <FontAwesomeIcon className={'icon'} icon={'eye'}/>
                             :
-                            <FontAwesomeIcon className={'icon'} icon={'eyeSlash'}/>
+                            <FontAwesomeIcon className={'icon'} icon={'eye-slash'}/>
                         }
                     </div>
                     :

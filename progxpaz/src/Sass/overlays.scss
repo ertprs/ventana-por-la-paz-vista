@@ -20,22 +20,13 @@
   height: 425px;
   border-radius: 6px;
   background-color: white;
-
-  //font-size: 1rem;
-  padding: 1%;
-
+  padding: 2%;
   display: flex;
   flex-direction: column;
-
-
-  div {
-    margin-bottom: 7px;
-  }
+  justify-content: space-around;
 
   .title {
     font-size: 24px;
-    width: 162px;
-    height: 33px;
     text-align: left;
     letter-spacing: -0.4px;
     color: #1C1C1C;
@@ -44,37 +35,14 @@
   }
 
   .label {
-    width: 310px;
-    height: 22px;
+    width: 100%;
     text-align: left;
     font: Regular 15px/22px Poppins;
     letter-spacing: -0.2px;
     color: #545454;
     opacity: 1;
-  }
-
-  .input-1 {
-    top: 429px;
-    left: 805px;
-    width: 310px;
-    height: 38px;
-    opacity: 1;
-  }
-
-  .label-old {
-    width: 100%;
     display: flex;
-    flex-direction: row;
     justify-content: space-between;
-  }
-
-  .input {
-    width: 100%;
-    border-style: solid;
-    border-radius: 5px;
-    border-color: #cfcfcf;
-    border-width: 1px;
-    height: 38px;
   }
 
   .button {
@@ -84,9 +52,11 @@
     padding: 3%;
   }
 
-  :last-child {
-    width: 100%;
+  .action-call {
+    border-top: 1px solid #E4E4E4;
+    padding-top: 5%;
     display: flex;
+    justify-content: space-around;
 
   }
 }

@@ -1,9 +1,13 @@
 import React, {Component} from 'react';
-import {BlackOut} from "./BlackOut";
 import {CheckBox} from "../Objects/CheckBox";
 import {InputField} from "../Objects/InputField";
+import {Button} from "reactstrap";
 
 export class LogInOverlay extends Component {
+
+    accept = () => {
+
+    };
 
     render() {
         return (
@@ -17,9 +21,7 @@ export class LogInOverlay extends Component {
                         Correo Electronico
                     </div>
 
-                    <div className={'input'}>
-
-                    </div>
+                    <InputField />
 
                     <div className={'label'}>
                         <span>
@@ -30,21 +32,17 @@ export class LogInOverlay extends Component {
                         </span>
                     </div>
 
-                    <InputField />
-
+                    <InputField password={true}/>
 
                     <CheckBox text={'Remember me'}/>
 
+                    <Button onClick={this.accept} color='primary'>
+                        Login
+                    </Button>
 
-                    <div className={'white-text blue-bkg bold button'}>
-                        Log In
-                    </div>
-
-
-
-                    <div>
+                    <div className={'action-call'}>
                         <div>
-                        Don't have an account?
+                        ¿No tiene una cuenta?
                         </div>
                         <div className={'bold blue-text'}>
                             Sign Up
