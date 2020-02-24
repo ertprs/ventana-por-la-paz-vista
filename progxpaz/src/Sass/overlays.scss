@@ -15,15 +15,34 @@
   transform: translate(-50%, -50%);
 }
 
-.log-in {
-  width: 350px;
-  height: 425px;
+.overlay {
+
+  &.log-in {
+    width: 350px;
+    height: 425px;
+  }
+
+  &.sign-up {
+    width: 540px;
+    height: 590px;
+  }
+
   border-radius: 6px;
   background-color: white;
   padding: 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-around;
+
+
+  .half {
+    width: 49%;
+  }
+
+  .desc {
+    color: #969696;
+    font-size: 13px;
+  }
 
   .title {
     font-size: 24px;
@@ -57,6 +76,5 @@
     padding-top: 5%;
     display: flex;
     justify-content: space-around;
-
   }
 }

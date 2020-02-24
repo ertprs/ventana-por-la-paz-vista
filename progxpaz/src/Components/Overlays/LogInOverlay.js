@@ -12,7 +12,7 @@ export class LogInOverlay extends Component {
     render() {
         return (
             <>
-                <div className={'abs-center log-in'}>
+                <div className={'abs-center overlay log-in'}>
                     <div className={'bold title'}>
                         Iniciar Sesión
                     </div>

@@ -110,18 +110,22 @@
 }
 
 .blue-bkg {
-  background-color: #007bff;
+  background-color: #007bff !important;
 
   &.light {
-    background-color: #3898ff;
+    background-color: #3898ff !important;
   }
 }
 
+.center-text {
+  text-align: center;
+}
+
 .blue-text {
-  color: #007bff;
+  color: #007bff !important;
 
   &.light {
-    color: #3898ff;
+    color: #3898ff !important;
   }
 }
 
@@ -131,6 +135,11 @@
 
 .flex-row {
   display: flex;
+  justify-content: space-between;
+}
+.flex-col {
+  display: flex;
+  flex-direction: column;
 }
 
 .bold {

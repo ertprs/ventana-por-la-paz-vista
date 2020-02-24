@@ -8,13 +8,22 @@ import {SignUpOverlay} from "./Overlays/SignUpOverlay";
 import {ProfileOverlay} from "./Overlays/ProfileOverlay";
 
 export class Header extends Component {
+
   state = {
     logged: false,
     overlay: '',
   };
 
-  setNoOverlay = (e) => {
+  escCancel = (e) => {
+    if (e.key === "Escape" && this.state.overlay !== '') {
+      this.setNoOverlay();
+    }
+  };
 
+  setNoOverlay = (e) => {
+    this.setState({
+      overlay: '',
+    });
   };
 
   setProfOverlay = (e) => {
@@ -43,7 +52,8 @@ export class Header extends Component {
 
     return (
       <>
-        {overlay === ''? <> </> : <> <BlackOut sendCancel={this.setNoOverlay()}/>
+        {overlay === ''? <> </> : <>
+          <BlackOut sendCancel={this.setNoOverlay}/>
           {overlay === 'li' ?  <LogInOverlay /> : <> </>}
           {overlay === 'su' ?  <SignUpOverlay /> : <> </>}
           {overlay === 'p' ?  <ProfileOverlay /> : <> </>}

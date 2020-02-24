@@ -3,13 +3,15 @@ import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
 
 export class CheckBox extends Component {
 
-    state = {
-        desc : '',
-        pressed : false
-    };
 
-    componentDidMount() {
-        this.updateDesc(this.props.text,this.props.pressed);
+    constructor(props, context) {
+        super(props,context);
+
+        this.state = {
+            desc : props.text,
+            pressed : props.pressed
+        };
+        //this.updateDesc(props.text, props.pressed);
     }
 
     updateDesc(newDesc, newState = false) {
@@ -29,7 +31,7 @@ export class CheckBox extends Component {
 
     render() {
         let {desc, pressed} = this.state;
-        console.log(this.state);
+
         return (
             <div className={'check-box'} onClick={this.setChecked}>
                 {pressed ?
