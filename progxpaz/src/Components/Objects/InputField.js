@@ -14,6 +14,12 @@ export class InputField extends Component {
         })
     }
 
+    flipVisible = () => {
+        this.setState({
+            visible : !this.state.visible,
+        })
+    };
+
     setInputFocus= () => {
         this.trueInput.focus();
     };
@@ -26,11 +32,11 @@ export class InputField extends Component {
                 <input
                     ref={(input) => { this.trueInput = input; }}
                     className={'inner-input'}
-                    type={isPassword? "password" : "text"}>
+                    type={isPassword && !visible? "password" : "text"}>
                 </input>
 
                 {isPassword ?
-                    <div className={'icon'}>
+                    <div className={'icon'} onClick={this.flipVisible}>
                         {visible ?
                             <FontAwesomeIcon className={'icon'} icon={'eye'}/>
                             :
