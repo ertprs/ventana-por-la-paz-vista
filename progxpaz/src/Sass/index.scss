@@ -60,30 +60,36 @@
     }
 
     .prod-info {
-      display: flex;
-      flex-direction: row;
       font-size: 1rem;
       justify-content: space-between;
-      align-items: center;
-
-      .info-price-orig {
-        color: gray;
-        text-decoration-line: line-through;
-      }
-
-      .info-price-new {
-        font-weight: bold;
-      }
 
       .info-price-perc {
-        border: 2px solid #007bff;
-        padding-left: 3%;
-        padding-right: 3%;
         font-size: 0.8rem;
-        color: #007bff;
-        border-radius: 2px;
       }
     }
+  }
+}
+
+.prod-info {
+  display: flex;
+  flex-direction: row;
+  align-items: center;
+  text-transform: uppercase;
+
+  .info-price-orig {
+    color: gray;
+    text-decoration-line: line-through;
+  }
+
+  .info-price-new {
+    font-weight: bold;
+  }
+
+  .info-price-perc {
+    border: 2px solid #007bff;
+    padding: 0 0.8rem;
+    color: #007bff;
+    border-radius: 2px;
   }
 }
 
@@ -146,7 +152,7 @@
   font-weight: 600;
 }
 
-//Product description
+// Start Product description
 .box {
   height: 3.5rem;
   width: 3.5rem;
@@ -155,7 +161,45 @@
 }
 
 .carousel {
-  height: 15rem;
-  width: 15rem;
+  height: 25rem;
+  width: 25rem;
   background-color: #bebebe;
 }
+
+.prod-desc {
+  font-family: 'Oswald';
+  font-size: 2rem;
+  align-items: baseline;
+
+  .info-price-orig {
+    margin-right: 1.3rem;
+    font-size: 1rem;
+  }
+
+  .info-price-perc {
+    margin-left: 1.3rem;
+    font-family: 'Poppins';
+    font-size: 1.3rem;
+    text-transform: capitalize;
+  }
+}
+
+.btn-comprar {
+  padding: 10px 24px;
+  border-radius: 0;
+  box-sizing: border-box;
+}
+
+.tags-container {
+  margin-top: 15px;
+  span.tag {
+    padding: 5px 25px;
+    margin: 0 0.5rem;
+    background-color: $black-400;
+  }
+
+  span.tag:first-child {
+    margin-left: 0;
+  }
+}
+// End Product description
