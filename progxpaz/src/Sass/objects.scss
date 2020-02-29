@@ -1,4 +1,3 @@
-
 .like-button {
   border-radius: 50%;
   width: 50px;
@@ -6,7 +5,7 @@
   background-color: #eee;
   cursor: pointer;
   transition: 0.2s;
-  box-shadow: 0 0 10px -2px;
+  box-shadow: 0 2px 5px #8f8f8f;
 
   display: flex;
   align-items: center;
@@ -49,7 +48,7 @@
 
     &.pressed {
       transform: scale(1.5);
-      color: #007BFF;
+      color: #007bff;
     }
   }
 }
@@ -71,7 +70,8 @@
     width: 100%;
     border: none;
 
-    &:focus, &:active &:hover {
+    &:focus,
+    &:active &:hover {
       outline: none;
     }
   }
