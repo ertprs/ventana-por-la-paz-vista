@@ -3,7 +3,6 @@ import Logo from '../Assets/images/logo.png';
 import { Button } from 'reactstrap';
 import { Search } from './Search';
 import { LogInOverlay } from './Overlays/LogInOverlay';
-import {BlackOut} from "./Overlays/BlackOut";
 import {SignUpOverlay} from "./Overlays/SignUpOverlay";
 import {ProfileOverlay} from "./Overlays/ProfileOverlay";
 
@@ -53,7 +52,7 @@ export class Header extends Component {
     return (
       <>
         {overlay === ''? <> </> : <>
-          <BlackOut sendCancel={this.setNoOverlay}/>
+          <div className={'overlay-bkg'} onClick={this.setNoOverlay}> </div>
           {overlay === 'li' ?  <LogInOverlay /> : <> </>}
           {overlay === 'su' ?  <SignUpOverlay /> : <> </>}
           {overlay === 'p' ?  <ProfileOverlay /> : <> </>}
