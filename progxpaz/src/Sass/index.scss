@@ -1,10 +1,4 @@
-@import 'normalize';
 @import 'variables';
-@import 'global';
-@import 'forms';
-@import 'overlays';
-@import 'header';
-@import 'objects';
 
 .product-card {
   //width: (286.33px / 1920px) * 100%;
@@ -167,7 +161,7 @@
 }
 
 .prod-desc {
-  font-family: 'Oswald';
+  font-family: 'Oswald', serif;
   font-size: 2rem;
   align-items: baseline;
 
@@ -178,7 +172,7 @@
 
   .info-price-perc {
     margin-left: 1.3rem;
-    font-family: 'Poppins';
+    font-family: 'Poppins', serif;
     font-size: 1.3rem;
     text-transform: capitalize;
   }
