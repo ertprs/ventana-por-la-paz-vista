@@ -3,7 +3,7 @@ import Logo from '../Assets/images/logo.png';
 import { Button } from 'reactstrap';
 import { Search } from './Search';
 import LogInOverlay from './Overlays/LogInOverlay';
-import { SignUpOverlay } from './Overlays/SignUpOverlay';
+import SignUpOverlay from './Overlays/SignUpOverlay';
 import { ProfileOverlay } from './Overlays/ProfileOverlay';
 import { Link } from 'react-router-dom';
 export class Header extends Component {

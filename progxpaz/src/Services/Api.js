@@ -12,3 +12,16 @@ export async function Login(username, password) {
       console.log(res);
     });
 }
+
+export async function SignUp(nombre, correo, contraseña) {
+  await axios
+    .post(`${process.env.REACT_APP_APIURL}/api/v1/tps/perfiles/`, {
+      nombre: JSON.stringify(nombre),
+      edad: 18,
+      correo: JSON.stringify(correo),
+      contraseña: JSON.stringify(contraseña),
+    })
+    .then((res) => {
+      console.log(res);
+    });
+}
