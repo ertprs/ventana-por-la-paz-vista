@@ -28,8 +28,8 @@ export class InputField extends Component {
     let { isPassword, visible } = this.state;
 
     return (
-      <div className={'input-field'} onClick={this.setInputFocus}>
-        <Input
+        <div style={{display: 'flex', alignItems: 'center'}}>
+      <input
           ref={(input) => {
             this.trueInput = input;
           }}
@@ -37,10 +37,8 @@ export class InputField extends Component {
           name={this.props.name}
           value={this.props.value}
           onChange={this.props.onChange}
-          className={'inner-input'}
           type={isPassword && !visible ? 'password' : 'text'}
-        ></Input>
-
+      />
         {isPassword ? (
           <div className={'icon'} onClick={this.flipVisible}>
             {visible ? (
