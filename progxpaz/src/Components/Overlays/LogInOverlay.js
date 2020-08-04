@@ -7,9 +7,19 @@ import { Login } from '../../Services/Api';
 export default function LogInOverlay() {
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
+  const [token, setToken] = useState('');
 
-  const accept = () => {
-    Login(username, password);
+  const accept = async () => {
+    await Login(username, password)
+      .then((res) => {
+        if (res.status === 200) {
+          setToken(res.data['key']);
+          console.log(token);
+        }
+      })
+      .catch((er) => {
+        console.error(er);
+      });
   };
 
   return (
