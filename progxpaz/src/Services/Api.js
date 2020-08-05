@@ -12,7 +12,7 @@ export async function Login(username, password) {
     .catch((err) => console.log(`Error: ${err}`));
 }
 
-export async function CreateProfile(nombre, correo, contraseña, token) {
+export async function CreateProfile(nombre, correo, contraseña) {
   const data = {
     nombre: nombre,
     edad: 18,
@@ -26,7 +26,7 @@ export async function CreateProfile(nombre, correo, contraseña, token) {
       {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Token ${token}`,
+          Authorization: `Token ${process.env.REACT_APP_TOKEN}`,
         },
       }
     )
@@ -39,8 +39,7 @@ export async function CreateShop(
   descripcion,
   indicativo,
   whatsapp,
-  ubicacion,
-  token
+  ubicacion
 ) {
   const data = {
     nombre: nombre,
@@ -57,7 +56,7 @@ export async function CreateShop(
       {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Token ${token}`,
+          Authorization: `Token ${process.env.REACT_APP_TOKEN}`,
         },
       }
     )
@@ -65,7 +64,7 @@ export async function CreateShop(
     .catch((err) => console.log(`Error: ${err}`));
 }
 
-export async function LinkProfileShop(idProfile, idShop, token) {
+export async function LinkProfileShop(idProfile, idShop) {
   const data = {
     tienda: idShop,
   };
@@ -77,7 +76,7 @@ export async function LinkProfileShop(idProfile, idShop, token) {
       {
         headers: {
           'Content-Type': 'application/json',
-          Authorization: `Token ${token}`,
+          Authorization: `Token ${process.env.REACT_APP_TOKEN}`,
         },
       }
     )

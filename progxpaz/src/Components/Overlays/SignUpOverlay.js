@@ -42,8 +42,7 @@ export default function SignUpOverlay() {
     await CreateProfile(
       `${form.firstname} ${form.lastname}`,
       form.email,
-      form.password,
-      process.env.REACT_APP_TOKEN
+      form.password
     )
       .then((res) => {
         if (res.status === 201) {
@@ -60,8 +59,7 @@ export default function SignUpOverlay() {
       form.shopDesc,
       form.indicative,
       form.whatsapp,
-      form.address,
-      process.env.REACT_APP_TOKEN
+      form.address
     )
       .then((res) => {
         if (res.status === 201) {
@@ -73,9 +71,11 @@ export default function SignUpOverlay() {
         console.error(er);
       });
 
-    await LinkProfileShop(idProfile, idShop, process.env.REACT_APP_TOKEN)
+    await LinkProfileShop(idProfile, idShop)
       .then((res) => {
-        console.log(res);
+        if (res.status === 200) {
+          console.log(res.data);
+        }
       })
       .catch((err) => console.error(err));
   };
