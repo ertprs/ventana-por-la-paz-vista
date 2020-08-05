@@ -65,12 +65,19 @@
 }
 
 .prod-info {
-  display: flex;
+  /*   display: flex;
   flex-direction: row;
-  align-items: center;
-  text-transform: uppercase;
+  align-items: center; */
+  color: $black-300;
+  word-wrap: break-word;
 
-  .info-price-orig {
+  &:after {
+    content: ' Ver más';
+    color: $blue-100;
+    cursor: pointer;
+  }
+
+  /*   .info-price-orig {
     color: gray;
     text-decoration-line: line-through;
   }
@@ -84,7 +91,7 @@
     padding: 0 0.8rem;
     color: #007bff;
     border-radius: 2px;
-  }
+  } */
 }
 
 .section {

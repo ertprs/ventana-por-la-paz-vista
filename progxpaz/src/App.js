@@ -4,7 +4,6 @@ import './Sass/main.scss';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import Home from './Pages/Home';
 import { ProductPage } from './Pages/ProductPage';
-import { Category } from './Components/Category';
 import { Header } from './Components/Header';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
@@ -31,8 +30,6 @@ export default function App() {
           <Route exact path='/' component={Home} />
 
           <Route path='/product' component={ProductPage} />
-
-          <Route path='/category' component={Category} />
 
           <Route path='/shop' component={ShopPage} />
         </Switch>

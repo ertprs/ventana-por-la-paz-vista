@@ -17,7 +17,7 @@ export default function ProductDescription() {
             <div className='carousel' />
           </div>
           <div className='col-md-6 col-sm-12 align-self-start mt-3'>
-            <h5>vendedor</h5>
+            <h5>Nombre de la tienda</h5>
             <div className='d-flex align-items-baseline'>
               <h1 className='mr-3'>Nombre del producto</h1>
               <LikeButton />
@@ -28,20 +28,20 @@ export default function ProductDescription() {
               aut? Magni dolor, placeat fugit dignissimos totam deleniti.
               Mollitia omnis ab perferendis?
             </p>
-            <div className='prod-info prod-desc'>
+            {/* <div className='prod-info prod-desc'>
               <h5 className='info-price-orig'>cop 32.000</h5>
               <h4 className='info-price-new'>cop 15.000</h4>
               <h5 className='info-price-perc'>50% off</h5>
-            </div>
+            </div> */}
             <button className='btn btn-primary btn-comprar'>
-              Comprar ahora!
+              Contactar al vendedor
             </button>
-            <div className='tags-container'>
+            {/* <div className='tags-container'>
               <span className='tag'>tag</span>
               <span className='tag'>tag</span>
               <span className='tag'>tag</span>
               <span className='tag'>tag</span>
-            </div>
+            </div> */}
           </div>
         </div>
       </div>

@@ -1,5 +1,7 @@
 import React, { useState } from 'react';
 import { LikeButton } from '../Components/Objects/LikeButton';
+import Section from '../Components/Section';
+import ProductCard from '../Components/ProductCard';
 import {
   Button,
   Modal,
@@ -11,7 +13,6 @@ import {
   Label,
   Input,
 } from 'reactstrap';
-import Section from '../Components/Section';
 
 export function ShopPage() {
   const [modal, setModal] = useState(false);
@@ -40,12 +41,6 @@ export function ShopPage() {
                 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate, sint quo beatae perferendis ipsum fugiat sapiente velit aut? Magni dolor, placeat fugit dignissimos totam deleniti. Mollitia omnis ab perferendis'}
             </p>
 
-            <div className='tags-container'>
-              <span className='tag'>tag</span>
-              <span className='tag'>tag</span>
-              <span className='tag'>tag</span>
-              <span className='tag'>tag</span>
-            </div>
             <button className='mt-3 btn btn-primary' onClick={toggle}>
               Editar
             </button>
@@ -91,7 +86,35 @@ export function ShopPage() {
           </div>
         </div>
       </div>
-      <Section title={'Productos'} />
+      <Section title={'Productos'}>
+        <ProductCard
+          name='Gorra'
+          price={30000}
+          category='Ropa'
+          discountPrice={15000}
+          discountPercentage={50}
+          description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quidem laudantium unde reiciendis tenetur minus harum tempore accusamus perspiciatis voluptas ex est atque autem ab illo eligendi, placeat repudiandae alias!'
+          shop={false}
+        />
+        <ProductCard
+          name='Correa'
+          price={60000}
+          category='Ropa'
+          discountPrice={54000}
+          discountPercentage={10}
+          description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quidem laudantium unde reiciendis tenetur minus harum tempore accusamus perspiciatis voluptas ex est atque autem ab illo eligendi, placeat repudiandae alias!'
+          shop={false}
+        />
+        <ProductCard
+          name='Pantalón'
+          price={20000}
+          category='Ropa'
+          discountPrice={15000}
+          discountPercentage={20}
+          description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quidem laudantium unde reiciendis tenetur minus harum tempore accusamus perspiciatis voluptas ex est atque autem ab illo eligendi, placeat repudiandae alias!'
+          shop={false}
+        />
+      </Section>
     </>
   );
 }
