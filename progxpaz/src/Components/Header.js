@@ -54,7 +54,10 @@ export class Header extends Component {
             <div className={'overlay-bkg'} onClick={this.setNoOverlay}>
               {' '}
             </div>
-            {overlay === 'li' ? <LogInOverlay /> : <> </>}
+            {overlay === 'li' ? <LogInOverlay callback={(value) => {
+              this.setNoOverlay()
+              this.setState({logged : true})
+            }}/> : <> </>}
             {overlay === 'su' ? <SignUpOverlay /> : <> </>}
             {overlay === 'p' ? <ProfileOverlay /> : <> </>}
           </>
