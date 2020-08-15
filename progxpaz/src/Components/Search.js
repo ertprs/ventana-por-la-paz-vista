@@ -1,21 +1,23 @@
-import React, {Component} from 'react';
-import {Button, Input} from "reactstrap";
-import {FontAwesomeIcon} from "@fortawesome/react-fontawesome";
+import React, { useState } from 'react';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
-export class Search extends Component {
-    render() {
-        return (
-            <div className={'search-bar'}>
-                <Input placeholder='¿ Qué estás buscando hoy ?' className={'input'} id='searchbar'/>
+export function Search() {
+  const [focus, setFocus] = useState(false);
 
-                <select className={'custom-select type-select'} name='filter'>
-                    <option value='tipo'>tipo</option>
-                </select>
+  return (
+    <div className='h-10 md:w-2/5 mx-2 flex border border-secondary-300 rounded'>
+      <input
+        placeholder='Buscar'
+        className='pl-2 py-1 w-32 md:w-full text-lg text-secondary-500'
+        onFocus={() => setFocus(!focus)}
+      />
 
-                <Button type='submit' color='primary' className={'button'}>
-                    <FontAwesomeIcon icon={'search'} />
-                </Button>
-            </div>
-        );
-    }
+      <button
+        type='submit'
+        className='h-full w-10 md:w-12 bg-primary-500  text-white rounded-r'
+      >
+        <FontAwesomeIcon icon={'search'} />
+      </button>
+    </div>
+  );
 }
