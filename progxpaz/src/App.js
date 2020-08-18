@@ -7,47 +7,31 @@ import Header from './Components/Header';
 
 import { library } from '@fortawesome/fontawesome-svg-core';
 import {
-  fab,
-  faWhatsapp as whatsapp,
+    faWhatsapp,
 } from '@fortawesome/free-brands-svg-icons';
 import {
-  faSearch as search,
-  faHeart as heartFill,
-  faSquare as square,
-  faCheckSquare as check,
-  faEye as eye,
-  faEyeSlash as eyeSlash,
-  faPen as pen,
+    faSearch, faHeart as heartFill, faSquare, faCheckSquare,
+    faEye, faEyeSlash, faPen,
 } from '@fortawesome/free-solid-svg-icons';
 import { faHeart as heartStroke } from '@fortawesome/free-regular-svg-icons';
 import { ShopPage } from './Pages/ShopPage';
 
 library.add(
-  fab,
-  search,
-  heartFill,
-  heartStroke,
-  check,
-  square,
-  eye,
-  eyeSlash,
-  whatsapp,
-  pen
+    faSearch, heartFill, faSquare, faCheckSquare,
+    faEye, faEyeSlash, faPen, heartStroke, faWhatsapp
 );
 
 export default function App() {
-  return (
-    <>
-      <BrowserRouter>
-        <Header />
-        <Switch>
-          <Route exact path='/' component={Home} />
-
-          <Route path='/product' component={ProductPage} />
-
-          <Route path='/shop' component={ShopPage} />
-        </Switch>
-      </BrowserRouter>
-    </>
-  );
+    return (
+        <>
+            <BrowserRouter>
+                <Header />
+                <Switch>
+                    <Route exact path='/' component={Home} />
+                    <Route path='/product' component={ProductPage} />
+                    <Route path='/shop' component={ShopPage} />
+                </Switch>
+            </BrowserRouter>
+        </>
+    );
 }
