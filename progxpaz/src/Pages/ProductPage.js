@@ -29,51 +29,51 @@ export function ProductPage() {
 
   return (
     <>
-      <div className='sm:grid sm:grid-cols-2 md:-mb-8'>
+      <div className={'sm:grid sm:grid-cols-2 md:-mb-8'}>
         <div>
           <img
             src={img}
             alt='Imagen de la tienda'
-            className='w-64 h-64 md:h-full md:w-full md:p-8 mx-auto my-4 rounded-sm'
+            className={'w-64 h-64 md:h-full md:w-full md:p-8 mx-auto my-4 rounded-sm'}
           />
         </div>
-        <div className='p-2 mb-4 self-center'>
-          <div className='flex flex-no-wrap'>
-            <div className=''>
-              <h1 className='mr-3 text-xl md:text-3xl text-secondary-500 font-semibold'>
+        <div className={'p-2 mb-4 self-center'}>
+          <div className={'flex flex-no-wrap'}>
+            <div className={''}>
+              <h1 className={'mr-3 text-xl md:text-3xl text-secondary-500 font-semibold'}>
                 {title ? title : 'Accesorio de cocina'}
               </h1>
-              <Link to='/shop' className='no-underline'>
-                <h5 className='text-sm text-secondary-300 leading-snug hover:text-primary-500'>
+              <Link to='/shop' className={'no-underline'}>
+                <h5 className={'text-sm text-secondary-300 leading-snug hover:text-primary-500'}>
                   Almacén Rosalía
                 </h5>
               </Link>
             </div>
             <LikeButton />
           </div>
-          <p className='my-2 md:my-4'>
+          <p className={'my-2 md:my-4'}>
             {description
               ? description
               : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate, sint quo beatae perferendis ipsum fugiat sapiente velit aut? Magni dolor, placeat fugit dignissimos totam deleniti. Mollitia omnis ab perferendis'}
           </p>
-          <button className='p-2 my-2 block text-white rounded-md bg-primary-500 text-center'>
+          <button className={'p-2 my-2 block text-white rounded-md bg-primary-500 text-center'}>
             Contacta al vendedor
             <FontAwesomeIcon
-              className='text-2xl text-white ml-2'
+              className={'text-2xl text-white ml-2'}
               icon={['fab', 'whatsapp']}
             />
           </button>
           <button
-            className='p-2 my-2 block rounded-md border border-primary-500 text-primary-500 text-center'
+            className={'p-2 my-2 block rounded-md border border-primary-500 text-primary-500 text-center'}
             onClick={toggle}
           >
             Editar
-            <FontAwesomeIcon className='ml-2 text-xl' icon='pen' />
+            <FontAwesomeIcon className={'ml-2 text-xl'} icon='pen' />
           </button>
           <Modal
             isOpen={modal}
             toggle={toggle}
-            className='modal-dialog-centered'
+            className={'modal-dialog-centered'}
           >
             <ModalHeader toggle={toggle}>Editar producto</ModalHeader>
             <ModalBody>
@@ -101,7 +101,7 @@ export function ProductPage() {
               </Form>
             </ModalBody>
             <ModalFooter>
-              <Button color='secondary' onClick={toggle} className='mr-2'>
+              <Button color='secondary' onClick={toggle} className={'mr-2'}>
                 Cancelar
               </Button>
               <Button color='primary' onClick={toggle}>

@@ -25,14 +25,14 @@ export function ShopPage() {
     
     return (
         <>
-            <div className='container expand-md'>
-                <div className='row align-items-center'>
-                    <div className='col-xs-5 ml-5'>
-                        <div className='carousel' />
+            <div className={'container expand-md'}>
+                <div className={'row align-items-center'}>
+                    <div className={'col-xs-5 ml-5'}>
+                        <div className={'carousel'} />
                     </div>
-                    <div className='col-md-6 col-sm-12 align-self-start mt-3'>
-                        <div className='d-flex align-items-baseline'>
-                            <h1 className='mr-3'>{title ? title : 'Nombre de Tienda'}</h1>
+                    <div className={'col-md-6 col-sm-12 align-self-start mt-3'}>
+                        <div className={'d-flex align-items-baseline'}>
+                            <h1 className={'mr-3'}>{title ? title : 'Nombre de Tienda'}</h1>
                             <LikeButton />
                         </div>
                         <p>
@@ -41,13 +41,13 @@ export function ShopPage() {
                             }
                         </p>
                         
-                        <button className='mt-3 btn btn-primary' onClick={toggle}>
+                        <button className={'mt-3 btn btn-primary'} onClick={toggle}>
                             Editar
                         </button>
                         <Modal
                             isOpen={modal}
                             toggle={toggle}
-                            className='modal-dialog-centered'
+                            className={'modal-dialog-centered'}
                         >
                             <ModalHeader toggle={toggle}>Editar tienda</ModalHeader>
                             <ModalBody>
@@ -75,7 +75,7 @@ export function ShopPage() {
                                 </Form>
                             </ModalBody>
                             <ModalFooter>
-                                <Button color='secondary' onClick={toggle} className='mr-2'>
+                                <Button color='secondary' onClick={toggle} className={'mr-2'}>
                                     Cancelar
                                 </Button>
                                 <Button color='primary' onClick={toggle}>

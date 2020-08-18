@@ -8,7 +8,7 @@ export class CreateProductOverlay extends Component {
                 // isOpen={modal}
                 isOpen={true}
                 // toggle={toggle}
-                className='modal-dialog-centered'
+                className={'modal-dialog-centered'}
             >
                 <ModalHeader >Agregar producto</ModalHeader>
                 <ModalBody>
@@ -36,7 +36,7 @@ export class CreateProductOverlay extends Component {
                     </Form>
                 </ModalBody>
                 <ModalFooter>
-                    <Button color='secondary' className='mr-2'>
+                    <Button color='secondary' className={'mr-2'}>
                         Cancelar
                     </Button>
                     <Button color='primary'>
