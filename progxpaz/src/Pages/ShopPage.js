@@ -3,15 +3,8 @@ import { LikeButton } from '../Components/Objects';
 import { Section } from '../Components/Section';
 import ProductCard from '../Components/ProductCard';
 import {
-    Button,
-    Modal,
-    ModalHeader,
-    ModalBody,
-    ModalFooter,
-    Form,
-    FormGroup,
-    Label,
-    Input,
+    Button, Modal, ModalHeader, ModalBody,
+    ModalFooter, Form, FormGroup, Label, Input,
 } from 'reactstrap';
 
 export function ShopPage() {
