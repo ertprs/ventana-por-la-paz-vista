@@ -1,5 +1,4 @@
 import React, { Component } from 'react';
-import ProductCard from './ProductCard';
 
 export default class Section extends Component {
   state = {
@@ -18,12 +17,21 @@ export default class Section extends Component {
     let { title } = this.state;
 
     return (
-      <div className={'section'}>
-        <div className={'title'}>
-          <span className={'main'}> {title} </span>
-          <span className={'link'}> ver mas </span>
+      <div className={'my-2 container'}>
+        <div className={'text-primary-500 flex items-center'}>
+          <span
+            className={
+              'mt-2 text-2xl sm:text-3xl md:text-4xl lg:text-6xl title font-semibold tracking-tight'
+            }
+          >
+            {' '}
+            {title}{' '}
+          </span>
+          {/* <span className={'ml-1 underline'}> ver más </span> */}
         </div>
-        <div className={'flex-row'}>{this.props.children}</div>
+        <div className={'flex overflow-x-auto w-auto py-2'}>
+          {this.props.children}
+        </div>
       </div>
     );
   }

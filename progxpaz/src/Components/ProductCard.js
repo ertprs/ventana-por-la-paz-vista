@@ -13,30 +13,24 @@ export default function ProductCard({
   shop,
 }) {
   return (
-    <Link to={shop ? '/shop' : '/product'}>
-      <div className={'product-card'} style={{ backgroundImage: img }}>
-        <div className={'row-body'}>
-          <div className={'prod-name'}>{name}</div>
-          <p className='prod-info'>{description.substr(0, 40)}...</p>
-          {/* <div className={'prod-info'}>
-          <div className={'info-price-orig'}>COP {price}</div>
-
-          <div className={'info-price-new'}>COP {discountPrice}</div>
-
-          <div className={'info-price-perc'}>{discountPercentage}% OFF</div>
-        </div> */}
+    <Link
+      to={shop ? '/shop' : '/product'}
+      className='hover:transform hover:scale-125 duration-200'
+    >
+      <div className='relative w-48 h-64 m-1 flex flex-col shadow-md rounded-md'>
+        <img
+          className='w-full h-32 bg-greyrose rounded-t-md bg-no-repeat bg-local bg-center'
+          src={img}
+          alt={'Imagen de ' + name}
+        ></img>
+        <div className={'absolute top-0 right-0'}>
+          <LikeButton />
         </div>
-
-        <div className={'row-top'}>
-          <div className={'row-like'}>
-            <LikeButton />
-          </div>
-
-          <div className={'row-img'} />
-
-          {/* <div className={'row-cat'}>
-            <div className={'cat-tag'}>{category}</div>
-          </div> */}
+        <div className='p-2'>
+          <h2 className='font-bold text-primary-500 text-lg tracking-tight'>
+            {name}
+          </h2>
+          <p className='mt-2'>{description.substr(0, 40)}...</p>
         </div>
       </div>
     </Link>
