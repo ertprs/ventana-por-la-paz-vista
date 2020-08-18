@@ -1,6 +1,6 @@
 import React, { useState } from 'react';
 import { LikeButton } from '../Components/Objects';
-import Section from '../Components/Section';
+import { Section } from '../Components/Section';
 import ProductCard from '../Components/ProductCard';
 import {
     Button,

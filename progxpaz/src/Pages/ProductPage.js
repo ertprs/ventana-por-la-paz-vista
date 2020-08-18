@@ -1,5 +1,5 @@
 import React, { useState } from 'react';
-import Section from '../Components/Section';
+import { Section } from '../Components/Section';
 import ProductCard from '../Components/ProductCard';
 import img from '../Assets/images/img.jpg';
 import { Link } from 'react-router-dom';

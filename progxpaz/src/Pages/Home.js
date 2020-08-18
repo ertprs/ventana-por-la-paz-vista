@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import Section from '../Components/Section';
+import { Section } from '../Components/Section';
 import ProductCard from '../Components/ProductCard';
 
 export default class Home extends Component {
