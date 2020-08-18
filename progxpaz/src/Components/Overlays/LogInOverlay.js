@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { CheckBox } from '../Objects/CheckBox';
-import { InputField } from '../Objects/InputField';
+import { CheckBox, InputField } from '../Objects';
 import { Button, Label } from 'reactstrap';
 import { Login } from '../../Services/Api';
 
