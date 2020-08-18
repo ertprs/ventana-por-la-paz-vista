@@ -6,6 +6,7 @@ import LogInOverlay from './Overlays/LogInOverlay';
 import SignUpOverlay from './Overlays/SignUpOverlay';
 import { ProfileOverlay } from './Overlays/ProfileOverlay';
 import { Link } from 'react-router-dom';
+
 export class Header extends Component {
   state = {
     logged: false,
