@@ -3,7 +3,7 @@ import Section from '../Components/Section';
 import ProductCard from '../Components/ProductCard';
 import img from '../Assets/images/img.jpg';
 import { Link } from 'react-router-dom';
-import { LikeButton } from '../Components/Objects/LikeButton';
+import { LikeButton } from '../Components/Objects';
 import {
   Button,
   Form,
@@ -15,7 +15,7 @@ import {
   ModalFooter,
   ModalHeader,
 } from 'reactstrap';
-import { CreateProductOverlay } from '../Components/Overlays/CreateProductOverlay';
+// import { CreateProductOverlay } from '../Components/Overlays/CreateProductOverlay';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function ProductPage() {

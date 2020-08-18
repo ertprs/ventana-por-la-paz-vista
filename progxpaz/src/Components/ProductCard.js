@@ -1,7 +1,7 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 import img from '../Assets/images/img.jpg';
-import { LikeButton } from './Objects/LikeButton';
+import { LikeButton } from './Objects';
 
 export default function ProductCard({
   name,
@@ -22,7 +22,7 @@ export default function ProductCard({
           className='w-full h-32 bg-greyrose rounded-t-md bg-no-repeat bg-local bg-center'
           src={img}
           alt={'Imagen de ' + name}
-        ></img>
+        />
         <div className={'absolute top-0 right-0'}>
           <LikeButton />
         </div>
