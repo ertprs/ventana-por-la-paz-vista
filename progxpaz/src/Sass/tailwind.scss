@@ -7,3 +7,17 @@ html,
 body {
   @apply font-sans;
 }
+
+div.action-call {
+  @apply h-20 border-t-2 border-secondary-200 flex justify-around;
+  div {
+    @apply flex justify-center items-center;
+    flex: 2;
+  }
+  .action {
+    @apply cursor-pointer flex font-bold text-primary-500;
+    &:hover {
+      @apply bg-blue-300;
+    }
+  }
+}
