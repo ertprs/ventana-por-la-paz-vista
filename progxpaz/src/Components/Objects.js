@@ -3,14 +3,14 @@ import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 export function CheckBox({ text }) {
   const [isPressed, setPressed] = useState(false);
-
   return (
-    <div className={'check-box'} onClick={() => setPressed(!isPressed)}>
+    <div className='check-box' onClick={() => setPressed(!isPressed)}>
       <FontAwesomeIcon
-        className={'icon' + (isPressed ? 'pressed' : '')}
+        className={'icon ml-1' + (isPressed ? 'pressed' : '')}
         icon={(isPressed ? 'check-' : '') + 'square'}
+        color='#007bff'
       />
-      <span className={'text'}>{text}</span>
+      <span className='text-base tracking-tight text-label ml-2'>{text}</span>
     </div>
   );
 }
@@ -19,8 +19,9 @@ export function InputField({ password, id, name, value, onChange }) {
   const [isVisible, setVisible] = useState(false);
 
   return (
-    <div style={{ display: 'flex', alignItems: 'center' }}>
+    <div className=''>
       <input
+        className='w-full p-1 rounded-md outline-none border border-secondary-200 h-10 box-border m-1 flex focus:border-primary-500'
         id={id}
         name={name}
         value={value}
@@ -28,7 +29,7 @@ export function InputField({ password, id, name, value, onChange }) {
         type={password && !isVisible ? 'password' : 'text'}
       />
 
-      {password ? (
+      {/* {password ? (
         <div className={'icon'} onClick={() => setVisible(!isVisible)}>
           <FontAwesomeIcon
             className={'icon'}
@@ -37,7 +38,7 @@ export function InputField({ password, id, name, value, onChange }) {
         </div>
       ) : (
         <> </>
-      )}
+      )} */}
     </div>
   );
 }
@@ -64,5 +65,16 @@ export function LikeButton() {
         />
       )}
     </div>
+  );
+}
+
+export function Label({ forHtml, label, styles = '' }) {
+  return (
+    <label
+      htmlFor={forHtml}
+      className={'w-full text-base tracking-tight text-label ' + styles}
+    >
+      {label}
+    </label>
   );
 }

@@ -34,7 +34,7 @@ export default function Modal(props) {
           <img
             src={CloseBtn}
             alt='Botón de cerrar'
-            className='ml-auto w-8 h-8 cursor-pointer'
+            className='ml-auto w-6 h-6 cursor-pointer'
             onClick={handleClose}
           />
         </div>

@@ -9,7 +9,7 @@ body {
 }
 
 div.action-call {
-  @apply h-20 border-t-2 border-secondary-200 flex justify-around;
+  @apply h-16 border-t border-secondary-200 flex justify-around;
   div {
     @apply flex justify-center items-center;
     flex: 2;

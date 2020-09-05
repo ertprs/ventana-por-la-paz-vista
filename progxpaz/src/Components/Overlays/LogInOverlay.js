@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
-import { CheckBox, InputField } from '../Objects';
-import { Button, Label } from 'reactstrap';
+import { CheckBox, InputField, Label } from '../Objects';
 import { Login } from '../../Services/Api';
 import Modal from './Modal';
 
@@ -33,39 +32,41 @@ export default function LogInOverlay(props) {
       close={() => setToggleModal(false)}
       footer={Footer()}
     >
-      <div className=' text-2xl capitalize tracking-tight text-secondary-500 font-medium'>
+      <div className=' text-2xl mb-2 capitalize tracking-tight text-secondary-500 font-bold'>
         Iniciar Sesión
       </div>
 
-      <Label for='username' className={'label'}>
-        Correo Electronico
-      </Label>
+      <Label forHtml='username' label='Correo Electronico' />
 
       <InputField
-        id='username'
         name='username'
         value={username}
         onChange={(e) => setUsername(e.target.value)}
       />
 
-      <Label for='password' className={'label'}>
-        <span>Contraseña</span>
-        <span className={'blue-text'}>Olvidé mi contraseña</span>
-      </Label>
+      <div className=''>
+        <Label forHtml='password' label='Contraseña' />
+        <span className='text-sm p-1 tracking-tight text-primary-500 float-right'>
+          Olvidé mi contraseña
+        </span>
+      </div>
 
       <InputField
         password={true}
-        id='password'
         name='password'
+        type='password'
         value={password}
         onChange={(e) => setPassword(e.target.value)}
       />
 
       <CheckBox text={'Remember me'} />
 
-      <Button onClick={accept} color='primary'>
-        Login
-      </Button>
+      <button
+        onClick={accept}
+        className='my-4 bg-primary-500 font-medium w-full text-white py-1 rounded-md'
+      >
+        Iniciar Sesión
+      </button>
     </Modal>
   );
 }
@@ -73,6 +74,6 @@ export default function LogInOverlay(props) {
 const Footer = () => (
   <div className='action-call '>
     <div>¿No tiene una cuenta?</div>
-    <div className={'bold blue-text action'}>Sign Up</div>
+    <div className={'bold blue-text action'}>Crear Cuenta</div>
   </div>
 );
