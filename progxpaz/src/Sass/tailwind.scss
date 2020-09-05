@@ -32,18 +32,16 @@ div.action-call {
 
 .form-button {
   @apply my-4 font-medium w-full py-1 rounded-md shadow;
+  &:focus {
+    @apply font-bold outline-none;
+  }
+
   &.primary {
     @apply bg-primary-500 text-white;
-    &:focus {
-      @apply font-bold outline-none;
-    }
   }
 
   &.secondary {
     @apply bg-white text-primary-500;
-    &:focus {
-      @apply font-bold outline-none;
-    }
   }
 }
 
@@ -54,5 +52,24 @@ div.action-call {
   }
   &.textarea {
     @apply h-20;
+  }
+}
+
+.inline-button {
+  @apply p-2 my-2 block rounded-md shadow text-center font-medium;
+  &:focus {
+    @apply outline-none;
+  }
+
+  &:hover {
+    @apply font-bold;
+  }
+
+  &.primary {
+    @apply bg-primary-500 text-white;
+  }
+
+  &.secondary {
+    @apply bg-white text-primary-500;
   }
 }

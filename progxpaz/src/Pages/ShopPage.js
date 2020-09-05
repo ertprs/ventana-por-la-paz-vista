@@ -48,12 +48,7 @@ export function ShopPage() {
                 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate, sint quo beatae perferendis ipsum fugiat sapiente velit aut? Magni dolor, placeat fugit dignissimos totam deleniti. Mollitia omnis ab perferendis'}
             </p>
 
-            <button
-              className={
-                'p-2 my-2 block rounded-md border border-primary-500 text-primary-500 text-center'
-              }
-              onClick={toggle}
-            >
+            <button className='inline-button secondary' onClick={toggle}>
               Editar
               <FontAwesomeIcon className={'ml-2 text-xl'} icon='pen' />
             </button>

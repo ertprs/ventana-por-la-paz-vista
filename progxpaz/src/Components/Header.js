@@ -29,7 +29,7 @@ export default function Header() {
           </button>
           <button
             onClick={() => setSignupModal(true)}
-            className='w-32 h-10 p-2 mr-2 flex-shrink-0 bg-white text-primary-500 rounded-md border-primary-500 shadow hover:font-semibold focus:outline-none'
+            className='w-32 h-10 p-2 mr-2 flex-shrink-0 bg-white text-primary-500 rounded-md shadow hover:font-semibold focus:outline-none'
           >
             Crear cuenta
           </button>
