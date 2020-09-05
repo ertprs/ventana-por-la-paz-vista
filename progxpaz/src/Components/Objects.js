@@ -15,18 +15,18 @@ export function CheckBox({ text }) {
   );
 }
 
-export function InputField({ password, id, name, value, onChange }) {
-  const [isVisible, setVisible] = useState(false);
+export function InputField({ id, name, value, onChange, type = 'text' }) {
+  // const [isVisible, setVisible] = useState(false);
 
   return (
     <div className=''>
       <input
-        className='w-full p-1 rounded-md outline-none border border-secondary-200 h-10 box-border m-1 flex focus:border-primary-500'
+        className='w-full p-1 rounded-md outline-none border border-secondary-200 h-10 box-border flex my-1 focus:border-primary-500'
         id={id}
         name={name}
         value={value}
         onChange={onChange}
-        type={password && !isVisible ? 'password' : 'text'}
+        type={type} /* password && !isVisible ? 'password' : 'text' */
       />
 
       {/* {password ? (

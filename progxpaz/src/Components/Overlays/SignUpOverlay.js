@@ -1,9 +1,7 @@
 import React, { useState } from 'react';
 import Modal from './Modal';
-import { InputField } from '../Objects';
-import { Button, Label } from 'reactstrap';
+import { InputField, Label } from '../Objects';
 import { CreateProfile, CreateShop, LinkProfileShop } from '../../Services/Api';
-import { FormGroup } from 'reactstrap';
 
 export default function SignUpOverlay(props) {
   // State
@@ -92,137 +90,113 @@ export default function SignUpOverlay(props) {
         close={() => setToggleModal(false)}
         footer={Footer()}
       >
-        <div className={'bold title pt-1'}>Crea una cuenta</div>
-        <div className={'content'}>
-          <h2 className={'subtitle mt-3 mb-1'}>Información del usuario</h2>
-          <div className={'flex-row'}>
-            <div className={'half'}>
-              <Label for='firstname' className={'label'}>
-                Primer Nombre
-              </Label>
-
-              <InputField
-                id='firstname'
-                name='firstname'
-                value={form.firstname}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-
-            <div className={'half'}>
-              <Label for='lastname' className={'label'}>
-                Apellido
-              </Label>
-              <InputField
-                id='lastname'
-                name='lastname'
-                value={form.lastname}
-                onChange={(e) => handleChange(e)}
-              />
-            </div>
-          </div>
-          <div className={''}>
-            <Label for='email' className={'label'}>
-              Correo Electronico
-            </Label>
+        <h2 className='form-title'>Crea una cuenta</h2>
+        <h2 className='form-subtitle'>Información del usuario</h2>
+        <div className='flex-row'>
+          <div className='half'>
+            <Label forHtml='firstname' label='Primer Nombre' />
 
             <InputField
-              id='email'
-              name='email'
-              value={form.email}
+              id='firstname'
+              name='firstname'
+              value={form.firstname}
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <div className={''}>
-            <Label for='password' className={'label'}>
-              Contraseña
-            </Label>
+
+          <div className={'half'}>
+            <Label forHtml='lastname' label='Apellido' />
 
             <InputField
-              password
-              id='password'
-              name='password'
-              value={form.password}
+              id='lastname'
+              name='lastname'
+              value={form.lastname}
               onChange={(e) => handleChange(e)}
             />
           </div>
-          <h2 className={'subtitle mt-3 mb-1'}>
-            Información de la ventana virtual
-          </h2>
-          <FormGroup>
-            <Label for='shop' className={'label'}>
-              Nombre del negocio
-            </Label>
-            <InputField
-              id='shop'
-              name='shop'
-              value={form.shop}
-              onChange={(e) => handleChange(e)}
-            />
-          </FormGroup>
-          <FormGroup>
-            <Label for='shopDesc' className={'label'}>
-              Descripción del negocio
-            </Label>
-            <InputField
-              id='shopDesc'
-              name='shopDesc'
-              value={form.shopDesc}
-              onChange={(e) => handleChange(e)}
-            />
-          </FormGroup>
-
-          <FormGroup>
-            <Label for='indicative' className={'label'}>
-              Indicativo
-            </Label>
-            <InputField
-              id='indicative'
-              name='indicative'
-              value={form.indicative}
-              onChange={(e) => handleChange(e)}
-            />
-          </FormGroup>
-
-          <FormGroup>
-            <Label for='whatsapp' className={'label'}>
-              Whatsapp
-            </Label>
-            <InputField
-              id='whatsapp'
-              name='whatsapp'
-              value={form.whatsapp}
-              onChange={(e) => handleChange(e)}
-            />
-          </FormGroup>
-
-          <FormGroup>
-            <Label for='address' className={'label'}>
-              Dirección del negocio
-            </Label>
-            <InputField
-              id='address'
-              name='address'
-              value={form.address}
-              onChange={(e) => handleChange(e)}
-            />
-          </FormGroup>
         </div>
+        <div className={''}>
+          <Label forHtml='email' label='Correo Electronico' />
 
-        <div className={'flex-col'}>
-          <span className={'desc my-1'}>
-            No compartiremos tu información con nadie
-          </span>
-          <Button onClick={handleSignUp} color='primary' className={'my-2'}>
-            Crear
-          </Button>
-          <span className={'desc center-text'}>
-            Al presionar "crear" usted está aceptando los
-          </span>
-          <span className={'blue-text desc center-text'}>
-            términos y condiciones, política de privacidad
-          </span>
+          <InputField
+            id='email'
+            name='email'
+            value={form.email}
+            onChange={(e) => handleChange(e)}
+          />
         </div>
+        <div className={''}>
+          <Label forHtml='password' label='Contraseña' />
+
+          <InputField
+            password
+            id='password'
+            name='password'
+            value={form.password}
+            onChange={(e) => handleChange(e)}
+          />
+        </div>
+        <h2 className='form-subtitle mt-4'>
+          Información de la ventana virtual
+        </h2>
+        <Label forHtml='shop' label='Nombre del negocio' />
+
+        <InputField
+          id='shop'
+          name='shop'
+          value={form.shop}
+          onChange={(e) => handleChange(e)}
+        />
+        <Label forHtml='shopDesc' label='Descripción del negocio' />
+
+        <InputField
+          id='shopDesc'
+          name='shopDesc'
+          value={form.shopDesc}
+          onChange={(e) => handleChange(e)}
+        />
+
+        <Label forHtml='indicative' label='Indicativo' />
+
+        <InputField
+          id='indicative'
+          name='indicative'
+          type='number'
+          value={form.indicative}
+          onChange={(e) => handleChange(e)}
+        />
+
+        <Label forHtml='whatsapp' label='Whatsapp' />
+
+        <InputField
+          id='whatsapp'
+          name='whatsapp'
+          type='number'
+          value={form.whatsapp}
+          onChange={(e) => handleChange(e)}
+        />
+
+        <Label forHtml='address' label='Dirección del negocio' />
+
+        <InputField
+          id='address'
+          name='address'
+          value={form.address}
+          onChange={(e) => handleChange(e)}
+        />
+
+        <span className={'desc my-1'}>
+          No compartiremos tu información con nadie
+        </span>
+        <button onClick={handleSignUp} className='form-button'>
+          Crear
+        </button>
+        <p className='text-center'>
+          Al presionar "crear" usted está aceptando los
+        </p>
+        <p className='text-center text-primary-500'>
+          términos y condiciones, política de privacidad
+        </p>
       </Modal>
     </>
   );

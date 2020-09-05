@@ -32,9 +32,7 @@ export default function LogInOverlay(props) {
       close={() => setToggleModal(false)}
       footer={Footer()}
     >
-      <div className=' text-2xl mb-2 capitalize tracking-tight text-secondary-500 font-bold'>
-        Iniciar Sesión
-      </div>
+      <div className='form-title'>Iniciar Sesión</div>
 
       <Label forHtml='username' label='Correo Electronico' />
 
@@ -61,10 +59,7 @@ export default function LogInOverlay(props) {
 
       <CheckBox text={'Remember me'} />
 
-      <button
-        onClick={accept}
-        className='my-4 bg-primary-500 font-medium w-full text-white py-1 rounded-md'
-      >
+      <button onClick={accept} className='form-button'>
         Iniciar Sesión
       </button>
     </Modal>

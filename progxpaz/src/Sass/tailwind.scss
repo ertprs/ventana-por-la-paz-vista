@@ -21,3 +21,15 @@ div.action-call {
     }
   }
 }
+
+.form-title {
+  @apply text-2xl mb-2 capitalize tracking-tight text-secondary-500 font-bold;
+}
+
+.form-subtitle {
+  @apply text-lg mb-1 tracking-tight text-secondary-500 font-bold;
+}
+
+.form-button {
+  @apply my-4 bg-primary-500 font-medium w-full text-white py-1 rounded-md;
+}
