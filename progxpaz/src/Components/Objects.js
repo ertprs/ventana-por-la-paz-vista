@@ -15,17 +15,26 @@ export function CheckBox({ text }) {
   );
 }
 
-export function InputField({ id, name, value, onChange, type = 'text' }) {
+export function InputField({
+  styles,
+  id,
+  name,
+  value,
+  onChange,
+  placeholder,
+  type = 'text',
+}) {
   // const [isVisible, setVisible] = useState(false);
 
   return (
     <div className=''>
       <input
-        className='form-input'
+        className={'form-input ' + styles}
         id={id}
         name={name}
         value={value}
         onChange={onChange}
+        placeholder={placeholder}
         type={type} /* password && !isVisible ? 'password' : 'text' */
       />
 

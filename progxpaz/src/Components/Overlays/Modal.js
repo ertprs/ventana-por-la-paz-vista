@@ -26,7 +26,7 @@ export default function Modal(props) {
       tabIndex='-1'
     >
       <div
-        className=' w-11/12 sm:w-3/5 lg:w-2/5 bg-white p-3 rounded-lg shadow-xl'
+        className=' w-11/12 sm:w-3/5 lg:w-4/12 bg-white p-1 sm:p-3 rounded-lg shadow-xl'
         id='overlay'
         aria-hidden={!toggle}
       >
@@ -38,7 +38,7 @@ export default function Modal(props) {
             onClick={handleClose}
           />
         </div>
-        <div className='h-64 text-lg font-light text-secondary-500 p-2 overflow-y-auto'>
+        <div className='text-lg font-light text-secondary-500 p-2 overflow-y-auto'>
           {children ? children : message}
         </div>
         <>{footer}</>

@@ -59,7 +59,7 @@ export default function LogInOverlay(props) {
 
       <CheckBox text={'Remember me'} />
 
-      <button onClick={accept} className='form-button'>
+      <button onClick={accept} className='form-button primary'>
         Iniciar Sesión
       </button>
     </Modal>

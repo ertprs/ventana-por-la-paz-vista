@@ -31,12 +31,28 @@ div.action-call {
 }
 
 .form-button {
-  @apply my-4 bg-primary-500 font-medium w-full text-white py-1 rounded-md;
+  @apply my-4 font-medium w-full py-1 rounded-md shadow;
+  &.primary {
+    @apply bg-primary-500 text-white;
+    &:focus {
+      @apply font-bold outline-none;
+    }
+  }
+
+  &.secondary {
+    @apply bg-white text-primary-500;
+    &:focus {
+      @apply font-bold outline-none;
+    }
+  }
 }
 
 .form-input {
   @apply w-full p-1 pl-3 rounded-md outline-none border border-secondary-200 h-10 box-border flex my-1;
   &:focus {
     @apply border-primary-500;
+  }
+  &.textarea {
+    @apply h-20;
   }
 }

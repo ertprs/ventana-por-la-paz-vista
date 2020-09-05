@@ -188,7 +188,7 @@ export default function SignUpOverlay(props) {
         <span className={'desc my-1'}>
           No compartiremos tu información con nadie
         </span>
-        <button onClick={handleSignUp} className='form-button'>
+        <button onClick={handleSignUp} className='form-button primary'>
           Crear
         </button>
         <p className='text-center'>
