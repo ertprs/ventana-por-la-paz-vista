@@ -92,8 +92,8 @@ export default function SignUpOverlay(props) {
       >
         <h2 className='form-title'>Crea una cuenta</h2>
         <h2 className='form-subtitle'>Información del usuario</h2>
-        <div className='flex-row'>
-          <div className='half'>
+        <div className='flex'>
+          <div className='w-1/2 pr-1'>
             <Label forHtml='firstname' label='Primer Nombre' />
 
             <InputField
@@ -104,7 +104,7 @@ export default function SignUpOverlay(props) {
             />
           </div>
 
-          <div className={'half'}>
+          <div className={'w-1/2 pl-1'}>
             <Label forHtml='lastname' label='Apellido' />
 
             <InputField

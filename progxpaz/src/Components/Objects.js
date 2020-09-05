@@ -21,7 +21,7 @@ export function InputField({ id, name, value, onChange, type = 'text' }) {
   return (
     <div className=''>
       <input
-        className='w-full p-1 rounded-md outline-none border border-secondary-200 h-10 box-border flex my-1 focus:border-primary-500'
+        className='form-input'
         id={id}
         name={name}
         value={value}
