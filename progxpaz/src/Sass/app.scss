@@ -15296,22 +15296,6 @@ div.action-call {
     font-weight: 700;
     outline: 0;
   }
-  &.primary {
-    --bg-opacity: 1;
-    background-color: #007BFF;
-    background-color: rgba(0, 123, 255, var(--bg-opacity));
-    --text-opacity: 1;
-    color: #fff;
-    color: rgba(255, 255, 255, var(--text-opacity));
-  }
-  &.secondary {
-    --bg-opacity: 1;
-    background-color: #fff;
-    background-color: rgba(255, 255, 255, var(--bg-opacity));
-    --text-opacity: 1;
-    color: #007BFF;
-    color: rgba(0, 123, 255, var(--text-opacity));
-  }
 }
 
 .form-input {
@@ -15354,21 +15338,39 @@ div.action-call {
   &:hover {
     font-weight: 700;
   }
-  &.primary {
-    --bg-opacity: 1;
-    background-color: #007BFF;
-    background-color: rgba(0, 123, 255, var(--bg-opacity));
-    --text-opacity: 1;
-    color: #fff;
-    color: rgba(255, 255, 255, var(--text-opacity));
+}
+
+.btn-primary {
+  --bg-opacity: 1;
+  background-color: #007BFF;
+  background-color: rgba(0, 123, 255, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #fff;
+  color: rgba(255, 255, 255, var(--text-opacity));
+}
+
+.btn-secondary {
+  --bg-opacity: 1;
+  background-color: #fff;
+  background-color: rgba(255, 255, 255, var(--bg-opacity));
+  --text-opacity: 1;
+  color: #007BFF;
+  color: rgba(0, 123, 255, var(--text-opacity));
+}
+
+.header-button {
+  width: 8rem;
+  height: 2.5rem;
+  padding: 0.5rem;
+  margin-right: 0.5rem;
+  flex-shrink: 0;
+  box-shadow: 0 1px 3px 0 rgba(0, 0, 0, 0.1), 0 1px 2px 0 rgba(0, 0, 0, 0.06);
+  border-radius: 0.375rem;
+  &:hover {
+    font-weight: 600;
   }
-  &.secondary {
-    --bg-opacity: 1;
-    background-color: #fff;
-    background-color: rgba(255, 255, 255, var(--bg-opacity));
-    --text-opacity: 1;
-    color: #007BFF;
-    color: rgba(0, 123, 255, var(--text-opacity));
+  &:focus {
+    outline: 0;
   }
 }
 

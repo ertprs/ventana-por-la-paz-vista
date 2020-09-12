@@ -35,14 +35,6 @@ div.action-call {
   &:focus {
     @apply font-bold outline-none;
   }
-
-  &.primary {
-    @apply bg-primary-500 text-white;
-  }
-
-  &.secondary {
-    @apply bg-white text-primary-500;
-  }
 }
 
 .form-input {
@@ -64,12 +56,22 @@ div.action-call {
   &:hover {
     @apply font-bold;
   }
+}
 
-  &.primary {
-    @apply bg-primary-500 text-white;
+.btn-primary {
+  @apply bg-primary-500 text-white;
+}
+
+.btn-secondary {
+  @apply bg-white text-primary-500;
+}
+
+.header-button {
+  @apply w-32 h-10 p-2 mr-2 flex-shrink-0 shadow rounded-md;
+  &:hover {
+    @apply font-semibold;
   }
-
-  &.secondary {
-    @apply bg-white text-primary-500;
+  &:focus {
+    @apply outline-none;
   }
 }

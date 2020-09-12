@@ -12,6 +12,8 @@ export default function EditShopOverlay(props) {
     description,
     setDescription,
   } = props;
+
+  // Functions
   const closeModal = () => setToggleModal(false);
 
   return (
@@ -23,6 +25,7 @@ export default function EditShopOverlay(props) {
         name='shop-title'
         id='shop-title'
         placeholder='Tienda la prosperidad'
+        value={title}
         onChange={(e) => setTitle(e.target.value)}
       />
       <Label forHtml='shop-description' label='Descripción de la tienda' />
@@ -32,6 +35,7 @@ export default function EditShopOverlay(props) {
         name='shop-description'
         id='shop-description'
         placeholder='Vendemos ropa al por mayor'
+        value={description}
         onChange={(e) => setDescription(e.target.value)}
       />
     </Modal>
@@ -41,12 +45,12 @@ export default function EditShopOverlay(props) {
 const Footer = (close) => (
   <div className='flex'>
     <div className='w-1/2 pr-1'>
-      <button className='form-button secondary' onClick={close}>
+      <button className='form-button btn-secondary' onClick={close}>
         Cancelar
       </button>
     </div>
     <div className='pl-1 w-1/2'>
-      <button className='form-button primary' onClick={close}>
+      <button className='form-button btn-primary' onClick={close}>
         Editar
       </button>
     </div>

@@ -4,11 +4,12 @@ import { Section } from '../Components/Section';
 import ProductCard from '../Components/ProductCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EditShopOverlay from '../Components/Overlays/EditShopOverlay';
+import { Consumer } from '../AuthContext';
 
 export function ShopPage() {
   const [modal, setModal] = useState(false);
-  const [title, setTitle] = useState(false);
-  const [description, setDescription] = useState(false);
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
 
   return (
     <>
@@ -33,14 +34,19 @@ export function ShopPage() {
                 ? description
                 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate, sint quo beatae perferendis ipsum fugiat sapiente velit aut? Magni dolor, placeat fugit dignissimos totam deleniti. Mollitia omnis ab perferendis'}
             </p>
-
-            <button
-              className='inline-button secondary'
-              onClick={() => setModal(true)}
-            >
-              Editar
-              <FontAwesomeIcon className={'ml-2 text-xl'} icon='pen' />
-            </button>
+            <Consumer>
+              {({ isAuth }) => (
+                <div className={isAuth ? '' : 'hidden'}>
+                  <button
+                    className={'inline-button btn-secondary'}
+                    onClick={() => setModal(true)}
+                  >
+                    Editar
+                    <FontAwesomeIcon className={'ml-2 text-xl'} icon='pen' />
+                  </button>
+                </div>
+              )}
+            </Consumer>
             <EditShopOverlay
               toggleModal={modal}
               setToggleModal={setModal}

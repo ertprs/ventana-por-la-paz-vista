@@ -6,13 +6,27 @@ export default function CreateProductOverlay(props) {
   // Props
   const { toggleModal, setToggleModal } = props;
 
+  // Function
+  const close = () => setToggleModal(false);
+
+  const Footer = () => (
+    <div className='flex'>
+      <div className='w-1/2 pr-1'>
+        <button className='form-button btn-secondary' onClick={close}>
+          Cancelar
+        </button>
+      </div>
+      <div className='pl-1 w-1/2'>
+        <button className='form-button btn-primary' onClick={close}>
+          Agregar
+        </button>
+      </div>
+    </div>
+  );
+
   return (
-    <Modal
-      close={() => setToggleModal(false)}
-      toggle={toggleModal}
-      footer={Footer()}
-    >
-      <h2 className='form-title'>Agregar producto</h2>
+    <Modal close={close} toggle={toggleModal} footer={Footer()}>
+      <h2 className='form-title'>Editar producto</h2>
       <Label forHtml='title' label='Nombre del producto' />
       <InputField
         type='text'
@@ -33,14 +47,3 @@ export default function CreateProductOverlay(props) {
     </Modal>
   );
 }
-
-const Footer = () => (
-  <div className='flex'>
-    <div className='w-1/2 pr-1'>
-      <button className='form-button secondary'>Cancelar</button>
-    </div>
-    <div className='pl-1 w-1/2'>
-      <button className='form-button primary'>Agregar</button>
-    </div>
-  </div>
-);

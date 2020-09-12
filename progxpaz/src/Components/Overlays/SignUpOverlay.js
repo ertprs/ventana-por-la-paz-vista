@@ -21,7 +21,7 @@ export default function SignUpOverlay(props) {
   const [idProfile, setIdProfile] = useState('');
 
   // Props
-  const { toggleModal, setToggleModal } = props;
+  const { toggleModal, setToggleModal, switchPage } = props;
 
   // Functions
   const handleChange = (e) => {
@@ -42,7 +42,8 @@ export default function SignUpOverlay(props) {
   };
 
   const handleSignUp = async () => {
-    await CreateProfile(
+    switchPage();
+    /*  await CreateProfile(
       `${form.firstname} ${form.lastname}`,
       form.email,
       form.password
@@ -80,8 +81,17 @@ export default function SignUpOverlay(props) {
           console.log(res.data);
         }
       })
-      .catch((err) => console.error(err));
+      .catch((err) => console.error(err)); */
   };
+
+  const Footer = () => (
+    <div className={'action-call'}>
+      <div>¿Ya tiene una cuenta?</div>
+      <div className={'bold blue-text action'} onClick={switchPage}>
+        Iniciar sesión
+      </div>
+    </div>
+  );
 
   return (
     <>
@@ -185,26 +195,19 @@ export default function SignUpOverlay(props) {
           onChange={(e) => handleChange(e)}
         />
 
-        <span className={'desc my-1'}>
+        <span className='text-secondary-400 my-1 text-xs '>
           No compartiremos tu información con nadie
         </span>
-        <button onClick={handleSignUp} className='form-button primary'>
+        <button onClick={handleSignUp} className='form-button btn-primary'>
           Crear
         </button>
-        <p className='text-center'>
+        <p className='text-sm text-center'>
           Al presionar "crear" usted está aceptando los
         </p>
-        <p className='text-center text-primary-500'>
+        <p className='text-sm text-center text-primary-500'>
           términos y condiciones, política de privacidad
         </p>
       </Modal>
     </>
   );
 }
-
-const Footer = () => (
-  <div className={'action-call'}>
-    <div>¿Ya tiene una cuenta?</div>
-    <div className={'bold blue-text action'}>Iniciar sesión</div>
-  </div>
-);

@@ -1,16 +1,20 @@
 import React, { useState } from 'react';
+import { Link } from 'react-router-dom';
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 import { Section } from '../Components/Section';
 import ProductCard from '../Components/ProductCard';
-import img from '../Assets/images/img.jpg';
-import { Link } from 'react-router-dom';
 import { LikeButton } from '../Components/Objects';
 import CreateProductOverlay from '../Components/Overlays/CreateProductOverlay';
-import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
+import { Consumer } from '../AuthContext';
+
+import img from '../Assets/images/img.jpg';
 
 export function ProductPage() {
   const [modal, setModal] = useState(false);
-  const [title, setTitle] = useState(false);
-  const [description, setDescription] = useState(false);
+  const [title, setTitle] = useState('');
+  const [description, setDescription] = useState('');
 
   return (
     <>
@@ -51,20 +55,26 @@ export function ProductPage() {
               ? description
               : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate, sint quo beatae perferendis ipsum fugiat sapiente velit aut? Magni dolor, placeat fugit dignissimos totam deleniti. Mollitia omnis ab perferendis'}
           </p>
-          <button className='inline-button primary'>
+          <button className='inline-button btn-primary'>
             Contacta al vendedor
             <FontAwesomeIcon
               className={'text-2xl text-white ml-2'}
               icon={['fab', 'whatsapp']}
             />
           </button>
-          <button
-            className='inline-button secondary'
-            onClick={() => setModal(true)}
-          >
-            Editar
-            <FontAwesomeIcon className={'ml-2 text-xl'} icon='pen' />
-          </button>
+          <Consumer>
+            {({ isAuth }) => (
+              <div className={isAuth ? '' : 'hidden'}>
+                <button
+                  className='inline-button btn-secondary'
+                  onClick={() => setModal(true)}
+                >
+                  Editar
+                  <FontAwesomeIcon className={'ml-2 text-xl'} icon='pen' />
+                </button>
+              </div>
+            )}
+          </Consumer>
         </div>
         <CreateProductOverlay toggleModal={modal} setToggleModal={setModal} />
       </div>

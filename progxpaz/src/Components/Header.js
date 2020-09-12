@@ -1,45 +1,72 @@
-import React, { useState, Fragment } from 'react';
+import React, { useState } from 'react';
 import Logo from '../Assets/images/logo.png';
 import { Search } from './Search';
 import LogInOverlay from './Overlays/LogInOverlay';
 import SignUpOverlay from './Overlays/SignUpOverlay';
 import { Link } from 'react-router-dom';
+import { Consumer } from '../AuthContext';
 
 export default function Header() {
   // State
-  const [isLogged, setLogged] = useState(false);
   const [loginModal, setLoginModal] = useState(false);
   const [signupModal, setSignupModal] = useState(false);
 
+  // Functions
+  const switchPage = () => {
+    setLoginModal(!loginModal);
+    setSignupModal(!signupModal);
+  };
+
   return (
-    <Fragment>
-      <header className={'container my-2 flex sm:justify-between items-center'}>
+    <>
+      <header className={'px-2 my-2 flex sm:justify-between items-center'}>
         <nav className={'flex flex-grow items-center'}>
           <Link to='/' className={'mx-1'}>
             <img src={Logo} alt='Logo de ventana por la paz' />
           </Link>
           <Search />
         </nav>
-        <div className={'sm:flex' + (isLogged ? ' hidden' : '')}>
-          <button
-            onClick={() => setLoginModal(true)}
-            className='w-32 h-10 p-2 mr-2 flex-shrink-0 bg-primary-500 text-white rounded-md shadow hover:font-semibold focus:outline-none'
-          >
-            Iniciar sesión
-          </button>
-          <button
-            onClick={() => setSignupModal(true)}
-            className='w-32 h-10 p-2 mr-2 flex-shrink-0 bg-white text-primary-500 rounded-md shadow hover:font-semibold focus:outline-none'
-          >
-            Crear cuenta
-          </button>
-        </div>
+        <Consumer>
+          {({ isAuth, setAuth }) => (
+            <div className='sm:flex'>
+              <button
+                onClick={() => setLoginModal(true)}
+                className={
+                  'header-button btn-primary ' + (isAuth ? 'hidden' : '')
+                }
+              >
+                Iniciar sesión
+              </button>
+              <button
+                onClick={() => setSignupModal(true)}
+                className={
+                  'header-button btn-secondary ' + (isAuth ? 'hidden' : '')
+                }
+              >
+                Crear cuenta
+              </button>
+              <button
+                onClick={() => setAuth(false)}
+                className={
+                  'header-button btn-primary ' + (isAuth ? '' : 'hidden')
+                }
+              >
+                Salir
+              </button>
+            </div>
+          )}
+        </Consumer>
       </header>
-      <LogInOverlay toggleModal={loginModal} setToggleModal={setLoginModal} />
+      <LogInOverlay
+        toggleModal={loginModal}
+        setToggleModal={setLoginModal}
+        switchPage={switchPage}
+      />
       <SignUpOverlay
         toggleModal={signupModal}
         setToggleModal={setSignupModal}
+        switchPage={switchPage}
       />
-    </Fragment>
+    </>
   );
 }
