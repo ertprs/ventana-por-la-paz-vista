@@ -3,26 +3,12 @@ import { LikeButton } from '../Components/Objects';
 import { Section } from '../Components/Section';
 import ProductCard from '../Components/ProductCard';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
-import {
-  Button,
-  Modal,
-  ModalHeader,
-  ModalBody,
-  ModalFooter,
-  Form,
-  FormGroup,
-  Label,
-  Input,
-} from 'reactstrap';
+import EditShopOverlay from '../Components/Overlays/EditShopOverlay';
 
 export function ShopPage() {
   const [modal, setModal] = useState(false);
   const [title, setTitle] = useState(false);
   const [description, setDescription] = useState(false);
-
-  const toggle = () => {
-    setModal(!modal);
-  };
 
   return (
     <>
@@ -48,49 +34,21 @@ export function ShopPage() {
                 : 'Lorem ipsum dolor sit amet consectetur adipisicing elit. Facere voluptate, sint quo beatae perferendis ipsum fugiat sapiente velit aut? Magni dolor, placeat fugit dignissimos totam deleniti. Mollitia omnis ab perferendis'}
             </p>
 
-            <button className='inline-button secondary' onClick={toggle}>
+            <button
+              className='inline-button secondary'
+              onClick={() => setModal(true)}
+            >
               Editar
               <FontAwesomeIcon className={'ml-2 text-xl'} icon='pen' />
             </button>
-            <Modal
-              isOpen={modal}
-              toggle={toggle}
-              className={'modal-dialog-centered'}
-            >
-              <ModalHeader toggle={toggle}>Editar tienda</ModalHeader>
-              <ModalBody>
-                <Form>
-                  <FormGroup>
-                    <Label for='title'>Nombre de la tienda</Label>
-                    <Input
-                      type='text'
-                      name='title'
-                      id='title'
-                      placeholder='Tienda la prosperidad'
-                      onChange={(e) => setTitle(e.target.value)}
-                    />
-                  </FormGroup>
-                  <FormGroup>
-                    <Label for='description'>Descripción de la tienda</Label>
-                    <Input
-                      type='textarea'
-                      name='description'
-                      id='description'
-                      placeholder='Venta de calzado'
-                      onChange={(e) => setDescription(e.target.value)}
-                    />
-                  </FormGroup>
-                </Form>
-              </ModalBody>
-              <ModalFooter>
-                <Button color='secondary' onClick={toggle} className={'mr-2'}>
-                  Cancelar
-                </Button>
-                <Button color='primary' onClick={toggle}>
-                  Editar
-                </Button>
-              </ModalFooter>
-            </Modal>
+            <EditShopOverlay
+              toggleModal={modal}
+              setToggleModal={setModal}
+              title={title}
+              setTitle={setTitle}
+              description={description}
+              setDescription={setDescription}
+            />
           </div>
         </div>
       </div>
