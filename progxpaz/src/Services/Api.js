@@ -9,18 +9,6 @@ const API = axios.create({
 
 let TOKEN;
 
-// export async function Login( username, password ) {
-//     const data = { username : username, password : password };
-//     return await axios
-//         .post(`${process.env.REACT_APP_APIURL}/auth/login/`, JSON.stringify(data), {
-//             headers : {
-//                 'Content-Type' : 'application/json',
-//             },
-//         })
-//         .then(( res ) => res)
-//         .catch(( err ) => console.log(`Error: ${err}`));
-// }
-
 export async function Login(username, password) {
   const data = { username: username, password: password };
 
@@ -32,6 +20,14 @@ export async function Login(username, password) {
     })
     .catch((err) => {
       console.log(`Error: ${err}`);
+    });
+}
+
+export async function Logout() {
+  return await API.post('auth/logout/')
+    .then((res) => res)
+    .catch((err) => {
+      console.error(`Error: ${err}`);
     });
 }
 

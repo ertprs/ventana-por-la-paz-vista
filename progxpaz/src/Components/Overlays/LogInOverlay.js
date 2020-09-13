@@ -16,9 +16,6 @@ export default function LogInOverlay(props) {
   // Login Function
   const handleSubmit = async (evt, setAuth) => {
     evt.preventDefault();
-    console.log(
-      `username: ${username}, pass: ${password} ${process.env.REACT_APP_APIURL}`
-    );
 
     if (username && password) {
       await Login(username, password)

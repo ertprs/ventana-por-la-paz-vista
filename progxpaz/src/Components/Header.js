@@ -5,6 +5,7 @@ import LogInOverlay from './Overlays/LogInOverlay';
 import SignUpOverlay from './Overlays/SignUpOverlay';
 import { Link } from 'react-router-dom';
 import { Consumer } from '../AuthContext';
+import { Logout } from '../Services/Api';
 
 export default function Header() {
   // State
@@ -15,6 +16,17 @@ export default function Header() {
   const switchPage = () => {
     setLoginModal(!loginModal);
     setSignupModal(!signupModal);
+  };
+
+  const endSession = async (setAuth) => {
+    await Logout()
+      .then(() => {
+        sessionStorage.removeItem('token');
+        setAuth(false);
+      })
+      .catch((err) => {
+        console.error(err);
+      });
   };
 
   return (
@@ -46,7 +58,7 @@ export default function Header() {
                 Crear cuenta
               </button>
               <button
-                onClick={() => setAuth(false)}
+                onClick={() => endSession(setAuth)}
                 className={
                   'header-button btn-primary ' + (isAuth ? '' : 'hidden')
                 }
