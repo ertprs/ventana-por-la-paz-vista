@@ -12,7 +12,7 @@ export default function SignUpOverlay(props) {
     password: '',
     shop: '',
     shopDesc: '',
-    indicative: '',
+    indicative: 0,
     whatsapp: 0,
     address: '',
     valid: false,

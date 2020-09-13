@@ -9,7 +9,6 @@ export default function LogInOverlay(props) {
   // State
   const [username, setUsername] = useState('');
   const [password, setPassword] = useState('');
-  const [token, setToken] = useState('');
 
   // Props
   const { toggleModal, setToggleModal, switchPage } = props;
@@ -22,80 +21,82 @@ export default function LogInOverlay(props) {
     );
 
     if (username && password) {
-      setAuth(true);
-      setToken('a');
-      /* await Login(username, password)
+      await Login(username, password)
         .then((res) => {
-          if (res.status === 200) {
-            setToken(res.data['key']);
-            console.log(token);
-            sessionStorage.setItem('token', token);
-          }
+          sessionStorage.setItem('token', res.data['key']);
+          setToggleModal(false);
+          restartValues();
+          setAuth(true);
         })
         .catch((er) => {
           console.error(er);
-        }); */
-    } else {
-      console.log('I can´t do that');
+        });
     }
+  };
+
+  const restartValues = () => {
+    setUsername('');
+    setPassword('');
   };
 
   const Footer = () => (
     <>
-      <div className='action-call '>
+      <div className='action-call'>
         <div>¿No tiene una cuenta?</div>
-        <div className={'bold blue-text action'} onClick={switchPage}>
+        <div className='bold blue-text action' onClick={switchPage}>
           Crear Cuenta
         </div>
       </div>
     </>
   );
 
-  return token ? (
-    <Redirect to='/shop' />
-  ) : (
-    <Modal
-      toggle={toggleModal}
-      close={() => setToggleModal(false)}
-      footer={Footer()}
-    >
-      <div className='form-title'>Iniciar Sesión</div>
-      <Consumer>
-        {({ setAuth }) => (
-          <form onSubmit={(e) => handleSubmit(e, setAuth)} noValidate>
-            <Label forHtml='login-username' label='Correo Electronico' />
+  return (
+    <Consumer>
+      {({ isAuth, setAuth }) =>
+        isAuth ? (
+          <Redirect to='/shop' />
+        ) : (
+          <Modal
+            toggle={toggleModal}
+            close={() => setToggleModal(false)}
+            footer={Footer()}
+          >
+            <div className='form-title'>Iniciar Sesión</div>
+            <form onSubmit={(e) => handleSubmit(e, setAuth)} noValidate>
+              <Label forHtml='login-username' label='Correo Electronico' />
 
-            <InputField
-              name='login-username'
-              id='login-username'
-              value={username}
-              onChange={(e) => setUsername(e.target.value)}
-            />
+              <InputField
+                name='login-username'
+                id='login-username'
+                value={username}
+                onChange={(e) => setUsername(e.target.value)}
+              />
 
-            <div>
-              <Label forHtml='login-password' label='Contraseña' />
-              <span className='text-sm p-1 tracking-tight text-primary-500 float-right'>
-                Olvidé mi contraseña
-              </span>
-            </div>
+              <div>
+                <Label forHtml='login-password' label='Contraseña' />
+                <span className='text-sm p-1 tracking-tight text-primary-500 float-right'>
+                  Olvidé mi contraseña
+                </span>
+              </div>
 
-            <InputField
-              password={true}
-              name='login-password'
-              id='login-password'
-              type='password'
-              value={password}
-              onChange={(e) => setPassword(e.target.value)}
-            />
+              <InputField
+                password={true}
+                name='login-password'
+                id='login-password'
+                type='password'
+                value={password}
+                onChange={(e) => setPassword(e.target.value)}
+              />
 
-            <CheckBox text={'Remember me'} />
+              <CheckBox text={'Remember me'} />
 
-            <button type='submit' className='form-button btn-primary'>
-              Iniciar Sesión
-            </button>
-          </form>
-        )}
-      </Consumer>
-    </Modal>
+              <button type='submit' className='form-button btn-primary'>
+                Iniciar Sesión
+              </button>
+            </form>
+          </Modal>
+        )
+      }
+    </Consumer>
   );
 }

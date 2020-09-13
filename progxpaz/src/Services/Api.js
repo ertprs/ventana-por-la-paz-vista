@@ -4,7 +4,10 @@ const API = axios.create({
   baseURL: `${process.env.REACT_APP_APIURL}`,
   timeout: 5000,
   responseType: 'json',
+  headers: { 'Content-Type': 'application/json' },
 });
+
+let TOKEN;
 
 // export async function Login( username, password ) {
 //     const data = { username : username, password : password };
@@ -18,11 +21,15 @@ const API = axios.create({
 //         .catch(( err ) => console.log(`Error: ${err}`));
 // }
 
-export function Login(username, password) {
+export async function Login(username, password) {
   const data = { username: username, password: password };
 
-  return API.post('/auth/login', JSON.stringify(data))
-    .then((res) => res)
+  return await API.post('/auth/login/', JSON.stringify(data))
+    .then((res) => {
+      TOKEN = res.data['key'];
+      API.defaults.headers.common['Authorization'] = `Token ${TOKEN}`;
+      return res;
+    })
     .catch((err) => {
       console.log(`Error: ${err}`);
     });
@@ -50,14 +57,14 @@ export function Login(username, password) {
 //         .catch(( err ) => console.log(`Error: ${err}`));
 // }
 
-export function CreateProfile(nombre, correo, contraseña) {
+export async function CreateProfile(nombre, correo, contraseña) {
   const data = {
     nombre,
     correo,
     contraseña,
     edad: 18,
   };
-  return API.post('/api/v1/tps/perfiles/', data, {
+  return await API.post('/api/v1/tps/perfiles/', data, {
     headers: {
       Authorization: `Token ${process.env.REACT_APP_TOKEN}`,
     },
@@ -100,7 +107,7 @@ export function CreateProfile(nombre, correo, contraseña) {
 //         .catch(( err ) => console.log(`Error: ${err}`));
 // }
 
-export function CreateShop(
+export async function CreateShop(
   nombre,
   descripcion,
   indicativo,
@@ -114,7 +121,7 @@ export function CreateShop(
     whatsapp: parseInt(whatsapp),
     ubicacion,
   };
-  return API.post('/api/v1/tps/tiendas/', data, {
+  return await API.post('/api/v1/tps/tiendas/', data, {
     headers: {
       Authorization: `Token ${process.env.REACT_APP_TOKEN}`,
     },
@@ -147,8 +154,8 @@ export function CreateShop(
 //         .catch(( err ) => console.log(`Error: ${err}`));
 // }
 
-export function LinkProfileShop(idProfile, tienda) {
-  return API.post(
+export async function LinkProfileShop(idProfile, tienda) {
+  return await API.post(
     '/api/v1/tps/perfiles/' + idProfile,
     { tienda },
     {
@@ -167,8 +174,8 @@ export function LinkProfileShop(idProfile, tienda) {
 
 // info de tienda [GET]
 // /api/v1/tiendas/id
-export function ShopInfo(shopid) {
-  return API.get('/api/v1/tps/tiendas/' + shopid)
+export async function ShopInfo(shopid) {
+  return await API.get('/api/v1/tps/tiendas/' + shopid)
     .then((r) => {
       return r;
     })
@@ -180,8 +187,8 @@ export function ShopInfo(shopid) {
 // tiendas ordenadas por visitas [GET]
 // /api/v1/tiendas
 // ?param=visitas
-export function PopularShops() {
-  return API.get('/api/v1/tps/tiendas/', {
+export async function PopularShops() {
+  return await API.get('/api/v1/tps/tiendas/', {
     params: {
       param: 'visitas',
     },
@@ -197,8 +204,8 @@ export function PopularShops() {
 // tiendas ordenadas por fecha de creacion [GET]
 // /api/v1/tiendas
 // ?param=recientes
-export function RecentShops() {
-  return API.get('/api/v1/tps/tiendas/', {
+export async function RecentShops() {
+  return await API.get('/api/v1/tps/tiendas/', {
     params: {
       param: 'recientes',
     },
@@ -213,8 +220,8 @@ export function RecentShops() {
 
 // visitar tienda [GET]
 // /api/v1/tiendas/id/visit
-export function VisitShop(shopid) {
-  return API.get('/api/v1/tps/tiendas/' + shopid + '/visit')
+export async function VisitShop(shopid) {
+  return await API.get('/api/v1/tps/tiendas/' + shopid + '/visit')
     .then((r) => {
       return r;
     })
@@ -226,8 +233,8 @@ export function VisitShop(shopid) {
 // busqueda [GET]
 // /ventanapaz/api/v1/tps/tiendas/filter_tienda/
 // ?words=busqueda
-export function SearchShops(shopid, search) {
-  return API.get('/api/v1/tps/tiendas/filter_tienda', {
+export async function SearchShops(shopid, search) {
+  return await API.get('/api/v1/tps/tiendas/filter_tienda', {
     params: {
       words: search,
     },
@@ -244,9 +251,9 @@ export function SearchShops(shopid, search) {
 // /ventanapaz/api/v1/tps/tiendas/filter_tienda/
 // body: new_password1,new_password2
 // header: usuario autenticado
-export function ChangePassword(new_password1, new_password2) {
+export async function ChangePassword(new_password1, new_password2) {
   const data = { new_password1, new_password2 };
-  return API.post('/api/v1/tps/tiendas/filter_tienda', data)
+  return await API.post('/api/v1/tps/tiendas/filter_tienda', data)
     .then((r) => {
       return r;
     })
