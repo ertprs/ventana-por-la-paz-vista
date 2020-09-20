@@ -31,28 +31,6 @@ export async function Logout() {
     });
 }
 
-// export async function CreateProfile( nombre, correo, contraseña ) {
-//     const data = {
-//         nombre : nombre,
-//         edad : 18,
-//         correo : correo,
-//         contraseña : contraseña,
-//     };
-//     return await axios
-//         .post(
-//             `${process.env.REACT_APP_APIURL}/api/v1/tps/perfiles/`,
-//             JSON.stringify(data),
-//             {
-//                 headers : {
-//                     'Content-Type' : 'application/json',
-//                     Authorization : `Token ${process.env.REACT_APP_TOKEN}`,
-//                 },
-//             }
-//         )
-//         .then(( res ) => res)
-//         .catch(( err ) => console.log(`Error: ${err}`));
-// }
-
 export async function CreateProfile(nombre, correo, contraseña) {
   const data = {
     nombre,
@@ -60,48 +38,16 @@ export async function CreateProfile(nombre, correo, contraseña) {
     contraseña,
     edad: 18,
   };
-  return await API.post('/api/v1/tps/perfiles/', data, {
+  return await API.post('/api/v1/tps/perfiles/', JSON.stringify(data), {
     headers: {
       Authorization: `Token ${process.env.REACT_APP_TOKEN}`,
     },
   })
-    .then((r) => {
-      return r;
-    })
+    .then((res) => res)
     .catch((err) => {
       console.log(`Error: ${err}`);
     });
 }
-
-// export async function CreateShop(
-//     nombre,
-//     descripcion,
-//     indicativo,
-//     whatsapp,
-//     ubicacion
-// ) {
-//     const data = {
-//         nombre : nombre,
-//         descripcion : descripcion,
-//         indicativo : indicativo,
-//         whatsapp : whatsapp,
-//         ubicacion : ubicacion,
-//     };
-//
-//     return await axios
-//         .post(
-//             `${process.env.REACT_APP_APIURL}/api/v1/tps/tiendas/`,
-//             JSON.stringify(data),
-//             {
-//                 headers : {
-//                     'Content-Type' : 'application/json',
-//                     Authorization : `Token ${process.env.REACT_APP_TOKEN}`,
-//                 },
-//             }
-//         )
-//         .then(( res ) => res)
-//         .catch(( err ) => console.log(`Error: ${err}`));
-// }
 
 export async function CreateShop(
   nombre,
@@ -111,29 +57,27 @@ export async function CreateShop(
   ubicacion
 ) {
   const data = {
-    nombre,
-    descripcion,
+    nombre: nombre,
+    descripcion: descripcion,
     indicativo: parseInt(indicativo),
     whatsapp: parseInt(whatsapp),
-    ubicacion,
+    ubicacion: ubicacion,
   };
-  return await API.post('/api/v1/tps/tiendas/', data, {
+  return await API.post('/api/v1/tps/tiendas/', JSON.stringify(data), {
     headers: {
       Authorization: `Token ${process.env.REACT_APP_TOKEN}`,
     },
   })
-    .then((r) => {
-      return r;
-    })
+    .then((res) => res)
     .catch((err) => {
       console.log(`Error: ${err}`);
     });
 }
 
 // export async function LinkProfileShop( idProfile, idShop ) {
-//     const data = {
-//         tienda : idShop,
-//     };
+// const data = {
+//     tienda : idShop,
+// };
 //
 //     return await axios
 //         .post(
@@ -150,19 +94,21 @@ export async function CreateShop(
 //         .catch(( err ) => console.log(`Error: ${err}`));
 // }
 
-export async function LinkProfileShop(idProfile, tienda) {
-  return await API.post(
-    '/api/v1/tps/perfiles/' + idProfile,
-    { tienda },
+export async function LinkProfileShop(idProfile, idShop) {
+  const data = {
+    tienda: idShop,
+  };
+
+  return await API.put(
+    `/api/v1/tps/perfiles/${idProfile}/`,
+    JSON.stringify(data),
     {
       headers: {
         Authorization: `Token ${process.env.REACT_APP_TOKEN}`,
       },
     }
   )
-    .then((r) => {
-      return r;
-    })
+    .then((res) => res)
     .catch((err) => {
       console.log(`Error: ${err}`);
     });

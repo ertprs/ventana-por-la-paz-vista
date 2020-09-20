@@ -40,7 +40,7 @@ export default function LogInOverlay(props) {
     <>
       <div className='action-call'>
         <div>¿No tiene una cuenta?</div>
-        <div className='bold blue-text action' onClick={switchPage}>
+        <div className='action' onClick={switchPage}>
           Crear Cuenta
         </div>
       </div>

@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
 import { InputField, Label } from '../Objects';
 import { CreateProfile, CreateShop, LinkProfileShop } from '../../Services/Api';
@@ -28,7 +28,14 @@ export default function SignUpOverlay(props) {
     setForm({
       ...form,
       [e.target.name]: e.target.value,
-      valid:
+      valid: validateForm(),
+    });
+  };
+
+  // All inputs have info? then return true, otherwise return false
+  const validateForm = () => {
+    if (
+      !(
         form.firstname &&
         form.lastname &&
         form.email &&
@@ -37,21 +44,41 @@ export default function SignUpOverlay(props) {
         form.shopDesc &&
         form.indicative &&
         form.whatsapp &&
-        form.address,
-    });
+        form.address
+      )
+    ) {
+      return false;
+    }
+    return true;
   };
 
+  useEffect(() => {
+    async function LinkUserShop() {
+      if (idProfile && idShop) {
+        await LinkProfileShop(idProfile, idShop)
+          .then(function (res) {
+            if (res.status !== 200) {
+              switchPage();
+            }
+          })
+          .catch((err) => console.error(err));
+      }
+    }
+
+    LinkUserShop();
+  }, [idProfile, idShop, switchPage]);
+
   const handleSignUp = async () => {
-    switchPage();
-    /*  await CreateProfile(
+    await CreateProfile(
       `${form.firstname} ${form.lastname}`,
       form.email,
       form.password
     )
       .then((res) => {
-        if (res.status === 201) {
-          setIdProfile(res.data['id']);
-          console.log(idProfile);
+        if (res.status !== 201) {
+          throw 'InvalidResponse';
+        } else {
+          setIdProfile(res.data.id);
         }
       })
       .catch((er) => {
@@ -66,22 +93,15 @@ export default function SignUpOverlay(props) {
       form.address
     )
       .then((res) => {
-        if (res.status === 201) {
+        if (res.status !== 201) {
+          throw 'InvalidResponse';
+        } else {
           setIdShop(res.data['id']);
-          console.log(idShop);
         }
       })
       .catch((er) => {
         console.error(er);
       });
-
-    await LinkProfileShop(idProfile, idShop)
-      .then((res) => {
-        if (res.status === 200) {
-          console.log(res.data);
-        }
-      })
-      .catch((err) => console.error(err)); */
   };
 
   const Footer = () => (
@@ -98,6 +118,7 @@ export default function SignUpOverlay(props) {
       <Modal
         toggle={toggleModal}
         close={() => setToggleModal(false)}
+        stylesBody='overflow-y-scroll'
         footer={Footer()}
       >
         <h2 className='form-title'>Crea una cuenta</h2>
