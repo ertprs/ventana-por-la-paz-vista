@@ -24,7 +24,7 @@ export default function EditShopOverlay(props) {
         type='text'
         name='shop-title'
         id='shop-title'
-        placeholder='Tienda la prosperidad'
+        placeholder='La prosperidad'
         value={title}
         onChange={(e) => setTitle(e.target.value)}
       />

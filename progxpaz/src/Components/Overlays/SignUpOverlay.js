@@ -1,7 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import Modal from './Modal';
-import { InputField, Label } from '../Objects';
 import { CreateProfile, CreateShop, LinkProfileShop } from '../../Services/Api';
+import SignUpForm from './SignUpForm';
 
 export default function SignUpOverlay(props) {
   // State
@@ -121,101 +121,7 @@ export default function SignUpOverlay(props) {
         stylesBody='overflow-y-scroll'
         footer={Footer()}
       >
-        <h2 className='form-title'>Crea una cuenta</h2>
-        <h2 className='form-subtitle'>Información del usuario</h2>
-        <div className='flex'>
-          <div className='w-1/2 pr-1'>
-            <Label forHtml='firstname' label='Primer Nombre' />
-
-            <InputField
-              id='firstname'
-              name='firstname'
-              value={form.firstname}
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-
-          <div className={'w-1/2 pl-1'}>
-            <Label forHtml='lastname' label='Apellido' />
-
-            <InputField
-              id='lastname'
-              name='lastname'
-              value={form.lastname}
-              onChange={(e) => handleChange(e)}
-            />
-          </div>
-        </div>
-        <div className={''}>
-          <Label forHtml='email' label='Correo Electronico' />
-
-          <InputField
-            id='email'
-            name='email'
-            value={form.email}
-            onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <div className={''}>
-          <Label forHtml='password' label='Contraseña' />
-
-          <InputField
-            password
-            id='password'
-            name='password'
-            value={form.password}
-            onChange={(e) => handleChange(e)}
-          />
-        </div>
-        <h2 className='form-subtitle mt-4'>
-          Información de la ventana virtual
-        </h2>
-        <Label forHtml='shop' label='Nombre del negocio' />
-
-        <InputField
-          id='shop'
-          name='shop'
-          value={form.shop}
-          onChange={(e) => handleChange(e)}
-        />
-        <Label forHtml='shopDesc' label='Descripción del negocio' />
-
-        <InputField
-          id='shopDesc'
-          name='shopDesc'
-          value={form.shopDesc}
-          onChange={(e) => handleChange(e)}
-        />
-
-        <Label forHtml='indicative' label='Indicativo' />
-
-        <InputField
-          id='indicative'
-          name='indicative'
-          type='number'
-          value={form.indicative}
-          onChange={(e) => handleChange(e)}
-        />
-
-        <Label forHtml='whatsapp' label='Whatsapp' />
-
-        <InputField
-          id='whatsapp'
-          name='whatsapp'
-          type='number'
-          value={form.whatsapp}
-          onChange={(e) => handleChange(e)}
-        />
-
-        <Label forHtml='address' label='Dirección del negocio' />
-
-        <InputField
-          id='address'
-          name='address'
-          value={form.address}
-          onChange={(e) => handleChange(e)}
-        />
-
+        <SignUpForm form={form} handleChange={handleChange} />
         <span className='text-secondary-400 my-1 text-xs '>
           No compartiremos tu información con nadie
         </span>
