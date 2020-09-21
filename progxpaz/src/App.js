@@ -7,31 +7,6 @@ import { ShopPage } from './Pages/ShopPage';
 import Header from './Components/Header';
 import { Provider } from './AuthContext';
 
-import { library } from '@fortawesome/fontawesome-svg-core';
-import { faWhatsapp } from '@fortawesome/free-brands-svg-icons';
-import {
-  faSearch,
-  faHeart as heartFill,
-  faSquare,
-  faCheckSquare,
-  faEye,
-  faEyeSlash,
-  faPen,
-} from '@fortawesome/free-solid-svg-icons';
-import { faHeart as heartStroke } from '@fortawesome/free-regular-svg-icons';
-
-library.add(
-  faSearch,
-  heartFill,
-  faSquare,
-  faCheckSquare,
-  faEye,
-  faEyeSlash,
-  faPen,
-  heartStroke,
-  faWhatsapp
-);
-
 export default function App() {
   return (
     <Provider>
