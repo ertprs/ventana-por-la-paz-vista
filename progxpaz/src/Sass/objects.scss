@@ -77,38 +77,14 @@ input, select {
   }
 }
 
-//.input-field {
-//  width: 100%;
-//  border-style: solid;
-//  border-radius: 5px;
-//  border-color: #cfcfcf;
-//  border-width: 1px;
-//  height: 38px;
-//  cursor: text;
-//  display: flex;
-//  justify-content: space-between;
-//  align-items: center;
-//  padding: 5px;
-//
-//  .inner-input {
-//    width: 100%;
-//    border: none;
-//
-//    &:focus,
-//    &:active &:hover {
-//      outline: none;
-//    }
-//  }
-//
-  .icon {
-    color: #969696;
-    transition: 0.2s;
-    cursor: pointer;
-    margin: 1%;
+.icon {
+  color: #969696;
+  transition: 0.2s;
+  cursor: pointer;
+  margin: 1%;
 
-    &:hover {
-      transform: scale(1.1);
-      color: #3898ff;
-    }
+  &:hover {
+    transform: scale(1.1);
+    color: #3898ff;
   }
-//}
+}
