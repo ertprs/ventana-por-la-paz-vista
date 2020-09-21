@@ -12,3 +12,33 @@
   font-weight: 600;
   font-style: normal;
 }
+
+.section-type-rows {
+  flex-wrap: wrap;
+  justify-content: space-between;
+}
+
+.section-type-scroll {
+  overflow-x: hidden;
+
+}
+.section-type-scroll::after {
+  content: '';
+  position: absolute;
+  height: 264px;
+  right: 43px;
+  display: block;
+  width: 50px;
+  transform: translate(0,-264px);
+  background: rgb(255,255,255);
+  background: linear-gradient(90deg, rgba(255,255,255,0) 0%, rgba(255,255,255,1) 80%);
+}
+
+.section-button {
+  height: inherit;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  width: 50px;
+  z-index: 2;
+}

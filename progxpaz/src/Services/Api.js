@@ -50,11 +50,7 @@ export async function CreateProfile(nombre, correo, contraseña) {
 }
 
 export async function CreateShop(
-  nombre,
-  descripcion,
-  indicativo,
-  whatsapp,
-  ubicacion
+  nombre, descripcion, indicativo, whatsapp, ubicacion
 ) {
   const data = {
     nombre: nombre,
@@ -93,7 +89,6 @@ export async function CreateShop(
 //         .then(( res ) => res)
 //         .catch(( err ) => console.log(`Error: ${err}`));
 // }
-
 export async function LinkProfileShop(idProfile, idShop) {
   const data = {
     tienda: idShop,

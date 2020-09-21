@@ -5,7 +5,7 @@ import ProductCard from '../Components/ProductCard';
 export default function Home() {
   return (
     <>
-      <Section title={'Las Ventanas Más Vistas'}>
+      <Section title={'Las Ventanas Más Vistas'} overflow={'scroll'}>
         <ProductCard
           name='Almacén Rosalía'
           price={30000}
@@ -33,7 +33,25 @@ export default function Home() {
           description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quidem laudantium unde reiciendis tenetur minus harum tempore accusamus perspiciatis voluptas ex est atque autem ab illo eligendi, placeat repudiandae alias!'
           shop={true}
         />
+        <SampleProduct />
+        <SampleProduct />
+        <SampleProduct />
+        <SampleProduct />
       </Section>
     </>
   );
+}
+
+function SampleProduct() {
+  return (
+      <ProductCard
+          name='Artesanías la esperanza '
+          price={20000}
+          category='Ropa'
+          discountPrice={15000}
+          discountPercentage={20}
+          description='Lorem ipsum dolor sit amet consectetur adipisicing elit. Repellat quidem laudantium unde reiciendis tenetur minus harum tempore accusamus perspiciatis voluptas ex est atque autem ab illo eligendi, placeat repudiandae alias!'
+          shop={true}
+      />
+  )
 }
