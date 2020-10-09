@@ -5,15 +5,15 @@ export function Section( { title, children, link, overflow = 'rows' } ) {
     const [ scroll, setScroll ] = useState(0)
     
     function handleScrolling( direction ) {
-        const delta = 200 * direction;
+        const step = Math.floor((window.innerWidth-100)/100)*100;
+        const delta = step * direction;
         const maxScroll = (children.length * 200)
         let endResult = scroll + delta;
         if ( endResult < 0 ) {
             endResult = endResult + maxScroll
-        } else if ( endResult === maxScroll ) {
+        } else if ( endResult >= maxScroll ) {
             endResult = 0;
         }
-        console.log(endResult)
         setScroll(endResult);
     }
     
