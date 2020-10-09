@@ -20,12 +20,14 @@
 
 .section-type-scroll {
   overflow-x: hidden;
-
 }
+
 .section-type-scroll::after {
   content: '';
   position: absolute;
-  height: 264px;
+  min-height: 264px;
+  height: 100%;
+  //height: inherit;
   right: 43px;
   display: block;
   width: 50px;

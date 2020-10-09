@@ -1,11 +1,24 @@
 import React from 'react';
-import { Section } from '../Components/Section';
+import { Carrousel, ImageCarrousel } from '../Components/Section';
 import ProductCard from '../Components/ProductCard';
+import { ImageCard } from "../Components/ImageCard";
 
 export default function Home() {
   return (
     <>
-      <Section title={'Las Ventanas Más Vistas'} overflow={'scroll'}>
+      <ImageCarrousel>
+        <ImageCard
+            alt={'hi'}
+            link={'/product'}
+            curimg={1}
+          />
+          <ImageCard
+              alt={'hi'}
+              link={'/product'}
+              curimg={2}
+          />
+      </ImageCarrousel>
+      <Carrousel title={'Las Ventanas Más Vistas'}>
         <ProductCard
           name='Almacén Rosalía'
           price={30000}
@@ -37,7 +50,7 @@ export default function Home() {
         <SampleProduct />
         <SampleProduct />
         <SampleProduct />
-      </Section>
+      </Carrousel>
     </>
   );
 }
