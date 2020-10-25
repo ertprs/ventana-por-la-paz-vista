@@ -99,7 +99,7 @@ export function ImageCarrousel( { children } ) {
         } else if ( endResult >= maxScroll ) {
             endResult = 0;
         }
-        console.log(endResult)
+        // console.log(endResult)
         setScroll(endResult);
     }
     
