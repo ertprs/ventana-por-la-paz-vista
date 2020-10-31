@@ -44,4 +44,39 @@
   min-width: 50px;
   width: 50px;
   z-index: 2;
+
+.title-header {
+  position: sticky;
+  height: 80px;
+  padding-left: 20px;
+  padding-right: 20px;
+  box-sizing: border-box;
+  display: flex;
+  width: 100%;
+  background-color: #007BFF;
+  color: white;
+  justify-content: space-between;
+  align-items: center;
+
+  >:first-child {
+    width: 50px;
+  }
+
+  > .icon {
+    background-color: white;
+    border-radius: 50%;
+
+    height: 50px;
+    width: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    img {
+      height: 80%;
+    }
+  }
+}
+
 }
