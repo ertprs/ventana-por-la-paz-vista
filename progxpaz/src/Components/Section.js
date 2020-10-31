@@ -107,9 +107,11 @@ export function ImageCarrousel( { children } ) {
         } else if ( endResult >= maxScroll ) {
             endResult = 0;
         }
-        // console.log(endResult)
         setScroll(endResult);
     }
+    // console.log(children.length * window.innerWidth)
+    
+    let carrouselWidth =window.innerWidth-(35*2)-(50*2) -17;
     
     return (
         <div className={'my-2'}>
@@ -124,16 +126,16 @@ export function ImageCarrousel( { children } ) {
                 
                 <div
                     style={{ height : '400px', overflowY : 'hidden' }}
-                    className={'py-2 section-type-scroll flex items-center'}
+                    className={'section-type-scroll'}
                     ref={carrouselRef}
                 >
                     <div
                         style={{
                             transform : 'translate(-' + scroll + 'px, 0)',
                             transition : '0.5s',
-                            width : (children.length * window.innerWidth) + 'px'
+                            width : (children.length * carrouselWidth) + 'px'
                         }}
-                        className={'flex'}
+                        className={'flex items-center'}
                         // className={'w-auto'}
                     >
                         {children}
