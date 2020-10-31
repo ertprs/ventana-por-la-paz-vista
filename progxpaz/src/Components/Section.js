@@ -15,7 +15,7 @@ export function Section( { title, children, } ) {
                 </span>
                 {/* <span className={'ml-1 underline'}> ver más </span> */}
             </div>
-            <div className={'flex w-screen'}>
+            <div className={'flex w-full'}>
                 <div className={'py-2 section-type-rows'}>
                     <div className={'flex w-auto'}>
                         {children}
@@ -35,7 +35,11 @@ export function Carrousel( { title, children } ) {
         const maxScroll = (children.length * 200)
         let endResult = scroll + delta;
         if ( endResult < 0 ) {
-            endResult = endResult + maxScroll
+            if (scroll !== 0) {
+                endResult = 0;
+            } else {
+                endResult = maxScroll - (step * 0.9);
+            }
         } else if ( endResult >= maxScroll ) {
             endResult = 0;
         }
@@ -55,26 +59,30 @@ export function Carrousel( { title, children } ) {
                 </span>
                 {/* <span className={'ml-1 underline'}> ver más </span> */}
             </div>
-            <div className={'flex w-screen'}>
+            <div className={'flex w-full'}>
                 
                 <button
-                    className={'section-button btn-secondary'}
+                    className={'section-button btn-secondary left'}
                     onClick={() => handleScrolling(-1)}
                 >
                     <FontAwesomeIcon icon={'chevron-left'} />
                 </button>
                 
-                <div className={'py-2 section-type-scroll'}>
+                <div className={'section-type-scroll'}>
                     <div
-                        style={{ transform : 'translate(-' + scroll + 'px, 0)', transition : '0.5s' }}
-                        className={'flex w-auto'}
+                        style={{
+                            transform : 'translate(-' + scroll + 'px, 0)',
+                            transition : '0.5s',
+                            width : (310 * children.length) + 'px'
+                        }}
+                        className={'flex'}
                     >
                         {children}
                     </div>
                 </div>
                 
                 <button
-                    className={'section-button btn-secondary'}
+                    className={'section-button btn-secondary right'}
                     onClick={() => handleScrolling(1)}
                 >
                     <FontAwesomeIcon icon={'chevron-right'} />
@@ -105,10 +113,10 @@ export function ImageCarrousel( { children } ) {
     
     return (
         <div className={'my-2'}>
-            <div className={'flex  items-center'}>
+            <div className={'flex '}>
                 
                 <button
-                    className={'section-button btn-secondary'}
+                    className={'section-button btn-secondary left'}
                     onClick={() => handleScrolling(-1)}
                 >
                     <FontAwesomeIcon icon={'chevron-left'} />
@@ -133,7 +141,7 @@ export function ImageCarrousel( { children } ) {
                 </div>
                 
                 <button
-                    className={'section-button btn-secondary'}
+                    className={'section-button btn-secondary right'}
                     onClick={() => handleScrolling(1)}
                 >
                     <FontAwesomeIcon icon={'chevron-right'} />
