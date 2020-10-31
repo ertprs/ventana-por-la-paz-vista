@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 export function ImageCard( { alt, link, curimg } ) {
     let img = curimg === 1 ? img1 : img2 ;
     return (
-        <div className={'w-screen flex items-center shadow-md rounded-md'}>
+        <div className={'flex-1 flex items-center shadow-md rounded-md'}>
             <Link to={link}>
                 <img
                     className={'w-full'

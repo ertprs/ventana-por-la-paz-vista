@@ -8,16 +8,18 @@ import Header from './Components/Header';
 import { Provider } from './AuthContext';
 
 export default function App() {
-  return (
-    <Provider>
-      <BrowserRouter>
-        <Header />
-        <Switch>
-          <Route exact path='/' component={Home} />
-          <Route path='/product' component={ProductPage} />
-          <Route path='/shop' component={ShopPage} />
-        </Switch>
-      </BrowserRouter>
-    </Provider>
-  );
+    return (
+        <Provider>
+            <BrowserRouter>
+                <Header />
+                <div className={'main-content'}>
+                    <Switch>
+                        <Route exact path='/' component={Home} />
+                        <Route path='/product' component={ProductPage} />
+                        <Route path='/shop' component={ShopPage} />
+                    </Switch>
+                </div>
+            </BrowserRouter>
+        </Provider>
+    );
 }

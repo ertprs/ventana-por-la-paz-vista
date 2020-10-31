@@ -76,7 +76,7 @@ export default function SignUpOverlay(props) {
     )
       .then((res) => {
         if (res.status !== 201) {
-          throw 'InvalidResponse';
+          throw new Error('InvalidResponse');
         } else {
           setIdProfile(res.data.id);
         }
@@ -94,7 +94,7 @@ export default function SignUpOverlay(props) {
     )
       .then((res) => {
         if (res.status !== 201) {
-          throw 'InvalidResponse';
+          throw new Error('InvalidResponse');
         } else {
           setIdShop(res.data['id']);
         }
