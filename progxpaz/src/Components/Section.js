@@ -15,12 +15,8 @@ export function Section( { title, children, } ) {
                 </span>
                 {/* <span className={'ml-1 underline'}> ver más </span> */}
             </div>
-            <div className={'flex w-full'}>
-                <div className={'py-2 section-type-rows'}>
-                    <div className={'flex w-auto'}>
-                        {children}
-                    </div>
-                </div>
+            <div className={'flex w-full py-2 section-type-rows'}>
+                {children}
             </div>
         </div>
     );
@@ -35,7 +31,7 @@ export function Carrousel( { title, children } ) {
         const maxScroll = (children.length * 200)
         let endResult = scroll + delta;
         if ( endResult < 0 ) {
-            if (scroll !== 0) {
+            if ( scroll !== 0 ) {
                 endResult = 0;
             } else {
                 endResult = maxScroll - (step * 0.9);
@@ -109,9 +105,10 @@ export function ImageCarrousel( { children } ) {
         }
         setScroll(endResult);
     }
+    
     // console.log(children.length * window.innerWidth)
     
-    let carrouselWidth =window.innerWidth-(35*2)-(50*2) -17;
+    let carrouselWidth = window.innerWidth - (35 * 2) - (50 * 2) - 17;
     
     return (
         <div className={'my-2'}>

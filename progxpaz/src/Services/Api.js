@@ -173,7 +173,7 @@ export async function VisitShop( shopid ) {
 // busqueda [GET]
 // /ventanapaz/api/v1/tps/tiendas/filter_tienda/
 // ?words=busqueda
-export async function SearchShops( search, page ) {
+export async function SearchShops( { search, page = 1 } ) {
     return await API.get('/api/v1/tps/tiendas/', {
         params : {
             words : search,
@@ -182,13 +182,11 @@ export async function SearchShops( search, page ) {
         headers : {
             Authorization : `Token ${process.env.REACT_APP_TOKEN}`,
         },
-    })
-        .then(( r ) => {
-            return r.data.results;
-        })
-        .catch(( err ) => {
-            console.log(`Error: ${err}`);
-        });
+    }).then(( r ) => {
+        return r.data.results;
+    }).catch(( err ) => {
+        console.log(`Error: ${err}`);
+    });
 }
 
 export async function SearchProducts( shopid, search ) {

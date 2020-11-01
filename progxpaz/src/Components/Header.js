@@ -1,13 +1,13 @@
 import React, { useState } from 'react';
 import Logo from '../Assets/images/logo.png';
-import { Search } from './Search';
+import { SearchInput } from './SearchInput';
 import LogInOverlay from './Overlays/LogInOverlay';
 import SignUpOverlay from './Overlays/SignUpOverlay';
 import { Link } from 'react-router-dom';
 import { Consumer } from '../AuthContext';
 import { Logout } from '../Services/Api';
 
-export default function Header() {
+export default function Header(props) {
     // State
     const [ loginModal, setLoginModal ] = useState(false);
     const [ signupModal, setSignupModal ] = useState(false);
@@ -42,7 +42,7 @@ export default function Header() {
             </div>
             <header style={{marginLeft: '35px', marginRight: '35px'}} className={'my-4 flex sm:justify-between items-center'}>
                 <nav className={'flex flex-grow items-center'}>
-                    <Search />
+                    <SearchInput history={props.history} />
                 </nav>
                 <Consumer>
                     {( { isAuth, setAuth } ) => (
