@@ -5,7 +5,7 @@ import { LikeButton } from './Objects';
 
 export default function ProductCard( { name, description, shop } ) {
     return (
-        <div style={{  }}  className={'w-48 h-64 mx-1 flex flex-col shadow-md rounded-md'}>
+        <div style={{  }}  className={'w-48 h-64 m-1 flex flex-col shadow-md rounded-md'}>
             <div className='relative'>
                 <Link to={shop ? '/shop' : '/product'}>
                     <img

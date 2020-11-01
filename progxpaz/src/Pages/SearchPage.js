@@ -1,17 +1,26 @@
 import React, { Component } from 'react';
-import { Carrousel, ImageCarrousel } from '../Components/Section';
+import { Section } from '../Components/Section';
 import ProductCard from '../Components/ProductCard';
-import { ImageCard } from "../Components/ImageCard";
 import { SearchShops } from "../Services/Api";
 
-export class Home extends Component {
+export class SearchPage extends Component {
     
     state = {
         shopList : []
     }
     
     componentDidMount() {
-        SearchShops().then(r => {
+        this.doSearch(this.props.match.params.search_params);
+    }
+    
+    componentDidUpdate( prevProps, prevState, snapshot ) {
+        if (prevProps.match.params.search_params !== this.props.match.params.search_params) {
+            this.doSearch(this.props.match.params.search_params);
+        }
+    }
+    
+    doSearch = (search) => {
+        SearchShops({search}).then(r => {
             this.setState({
                 shopList : r
             })
@@ -23,19 +32,7 @@ export class Home extends Component {
         
         return (
             <>
-                <ImageCarrousel>
-                    <ImageCard
-                        alt={'hi'}
-                        link={'/product'}
-                        curimg={1}
-                    />
-                    <ImageCard
-                        alt={'hi'}
-                        link={'/product'}
-                        curimg={2}
-                    />
-                </ImageCarrousel>
-                <Carrousel title={'Las Ventanas Más Vistas'}>
+                <Section title={'Resultados de Busqueda'}>
                     {
                         shopList.map(( item, i ) => {
                             return <ProductCard
@@ -46,7 +43,7 @@ export class Home extends Component {
                             />
                         })
                     }
-                </Carrousel>
+                </Section>
             </>
         );
     }
