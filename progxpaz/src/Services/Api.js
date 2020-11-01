@@ -173,7 +173,7 @@ export async function VisitShop( shopid ) {
 // busqueda [GET]
 // /ventanapaz/api/v1/tps/tiendas/filter_tienda/
 // ?words=busqueda
-export async function SearchShops( { search, page = 1 } ) {
+export async function SearchShops( { search, page = 1 }={} ) {
     return await API.get('/api/v1/tps/tiendas/', {
         params : {
             words : search,
