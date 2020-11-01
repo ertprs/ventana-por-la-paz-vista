@@ -60,11 +60,13 @@
   justify-content: center;
   min-width: 50px;
   width: 50px;
-  //z-index: 2;
+  z-index: 2;
 }
 
 .title-header {
   position: sticky;
+  z-index: 5;
+  top: 0;
   height: 80px;
   padding-left: 20px;
   padding-right: 20px;
@@ -76,7 +78,7 @@
   justify-content: space-between;
   align-items: center;
 
-  >:first-child {
+  > :first-child {
     width: 50px;
   }
 
