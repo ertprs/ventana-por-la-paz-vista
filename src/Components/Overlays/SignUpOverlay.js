@@ -34,22 +34,15 @@ export default function SignUpOverlay( props ) {
     
     // All inputs have info? then return true, otherwise return false
     const validateForm = () => {
-        if (
-            !(
-                form.firstname &&
-                form.lastname &&
-                form.email &&
-                form.password &&
-                form.shop &&
-                form.shopDesc &&
-                form.indicative &&
-                form.whatsapp &&
-                form.address
-            )
-        ) {
-            return false;
-        }
-        return true;
+        return form.firstname &&
+            form.lastname &&
+            form.email &&
+            form.password &&
+            form.shop &&
+            form.shopDesc &&
+            form.indicative &&
+            form.whatsapp &&
+            form.address;
     };
     
     useEffect(() => {

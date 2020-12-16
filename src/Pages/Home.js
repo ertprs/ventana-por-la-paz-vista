@@ -2,7 +2,7 @@ import React, { Component } from 'react';
 import { Carrousel, ImageCarrousel } from '../Components/Section';
 import ProductCard from '../Components/ProductCard';
 import { ImageCard } from "../Components/ImageCard";
-import { SearchShops } from "../Services/Api";
+import { FetchShops } from "../Services/Api";
 
 export class Home extends Component {
     
@@ -11,7 +11,7 @@ export class Home extends Component {
     }
     
     componentDidMount() {
-        SearchShops().then(r => {
+        FetchShops().then(r => {
             this.setState({
                 shopList : r
             })
