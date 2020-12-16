@@ -36,7 +36,7 @@ export default function LogInOverlay(props) {
     setPassword('');
   };
 
-  const foter = () => (
+  const Footer = () => (
     <>
       <div className='action-call'>
         <div>¿No tiene una cuenta?</div>
