@@ -13,7 +13,7 @@ export class Home extends Component {
     componentDidMount() {
         FetchShops().then(r => {
             this.setState({
-                shopList : r
+                shopList : r? r : []
             })
         })
     }
