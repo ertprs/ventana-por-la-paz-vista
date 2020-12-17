@@ -90,25 +90,20 @@ export function Carrousel( { title, children } ) {
 }
 
 export function ImageCarrousel( { children } ) {
-    const [ scroll, setScroll ] = useState(0)
-    const carrouselRef = useRef(null);
+    const [ scrollSteps, setScrollSteps ] = useState(0)
+    const [carrouselWidth, setCarrouselWidth] = useState(window.innerWidth - (35 * 2) - (50 * 2))
     
     function handleScrolling( direction ) {
-        const step = carrouselRef.current.clientWidth;
-        const delta = step * direction;
-        const maxScroll = (children.length * carrouselRef.current.clientWidth)
-        let endResult = scroll + delta;
-        if ( endResult < 0 ) {
-            endResult = endResult + maxScroll
-        } else if ( endResult >= maxScroll ) {
-            endResult = 0;
-        }
-        setScroll(endResult);
+        setScrollSteps((scrollSteps+direction)%children.length);
     }
     
-    // console.log(children.length * window.innerWidth)
-    
-    let carrouselWidth = window.innerWidth - (35 * 2) - (50 * 2) - 17;
+    React.useEffect(() => {
+        function handleResize() {
+            setCarrouselWidth(window.innerWidth - (35 * 2) - (50 * 2))
+        }
+        window.addEventListener('resize', handleResize)
+        console.log("!")
+    })
     
     return (
         <div className={'my-2'}>
@@ -124,12 +119,11 @@ export function ImageCarrousel( { children } ) {
                 <div
                     style={{ height : '400px', overflowY : 'hidden' }}
                     className={'section-type-scroll'}
-                    ref={carrouselRef}
                 >
                     <div
                         style={{
-                            transform : 'translate(-' + scroll + 'px, 0)',
-                            transition : '0.5s',
+                            transform : 'translate(-' + (scrollSteps*carrouselWidth) + 'px, 0)',
+                            transition : '0.5s transform',
                             width : (children.length * carrouselWidth) + 'px'
                         }}
                         className={'flex items-center'}
