@@ -37,6 +37,7 @@ export class Home extends Component {
                 </ImageCarrousel>
                 <Carrousel title={'Las Ventanas Más Vistas'}>
                     {
+                        shopList?
                         shopList.map(( item, i ) => {
                             return <ProductCard
                                 description={item.descripcion}
@@ -44,9 +45,11 @@ export class Home extends Component {
                                 name={item.nombre}
                                 key={i}
                             />
-                        })
+                        }):
+                        <></>
                     }
                 </Carrousel>
+
             </>
         );
     }

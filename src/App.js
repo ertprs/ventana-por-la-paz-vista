@@ -7,6 +7,8 @@ import { ShopPage } from './Pages/ShopPage';
 import Header from './Components/Header';
 import { Provider } from './AuthContext';
 import { SearchPage } from "./Pages/SearchPage";
+import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
+
 
 export class App extends Component {
     
@@ -20,9 +22,10 @@ export class App extends Component {
                             render={( props ) => {
                                 return <Fragment>
                                     <Header {...props} />
-                                    <div className={'main-content'}>
+                                    <div className={'main-content mb-4'}>
                                         <Home {...props} />
                                     </div>
+                                    <Footer/>
                                 </Fragment>
                             }}
                         />
@@ -67,4 +70,17 @@ export class App extends Component {
             </Provider>
         );
     }
+}
+
+
+const Footer = () => {
+    return <div className='w-full h-20 text-gray-600 flex justify-center items-center bg-primary-100'>
+        <span>Made with</span>
+        <span><FontAwesomeIcon
+          className={'h-12 w-12 mx-2 align-middle'}
+          color='red'
+          icon={'heart'}
+        /></span>
+        <span>by <a href='https://www.google.com' className='text-gray-700' target="_blank">PeaceDev</a></span>
+    </div>
 }
