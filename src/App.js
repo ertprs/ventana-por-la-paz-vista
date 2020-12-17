@@ -25,7 +25,6 @@ export class App extends Component {
                                     <div className={'main-content mb-4'}>
                                         <Home {...props} />
                                     </div>
-                                    <Footer/>
                                 </Fragment>
                             }}
                         />
@@ -67,6 +66,7 @@ export class App extends Component {
                         />
                     </Switch>
                 </BrowserRouter>
+                <Footer/>
             </Provider>
         );
     }
