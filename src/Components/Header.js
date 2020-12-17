@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { Consumer } from '../AuthContext';
 import { Logout } from '../Services/Api';
 
-export default function Header(props) {
+export default function Header( props ) {
     // State
     const [ loginModal, setLoginModal ] = useState(false);
     const [ signupModal, setSignupModal ] = useState(false);
@@ -32,7 +32,7 @@ export default function Header(props) {
     return (
         <>
             <div className={'title-header'}>
-                <div></div>
+                <div/>
                 <div>
                     ventana por la paz
                 </div>
@@ -40,7 +40,8 @@ export default function Header(props) {
                     <img src={Logo} alt='Logo de ventana por la paz' />
                 </Link>
             </div>
-            <header style={{marginLeft: '35px', marginRight: '35px'}} className={'my-4 flex sm:justify-between items-center'}>
+            <header style={{ marginLeft : '35px', marginRight : '35px' }}
+                    className={'my-4 flex sm:justify-between items-center'}>
                 <nav className={'flex flex-grow items-center'}>
                     <SearchInput history={props.history} />
                 </nav>

@@ -74,7 +74,7 @@ export class App extends Component {
 
 
 const Footer = () => {
-    return <div className='w-full h-20 text-gray-600 flex justify-center items-center bg-primary-100'>
+    return <footer className='w-full h-20 text-gray-600 flex justify-center items-center bg-primary-100'>
         <span>Made with</span>
         <span><FontAwesomeIcon
           className={'h-12 w-12 mx-2 align-middle'}
@@ -82,5 +82,5 @@ const Footer = () => {
           icon={'heart'}
         /></span>
         <span>by <a href='https://www.google.com' className='text-gray-700' target="_blank">PeaceDev</a></span>
-    </div>
+    </footer>
 }
