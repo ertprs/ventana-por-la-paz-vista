@@ -22,7 +22,7 @@ export class SearchPage extends Component {
     doSearch = (search) => {
         SearchShops({search}).then(r => {
             this.setState({
-                shopList : r
+                shopList : r? r : []
             })
         })
     }
