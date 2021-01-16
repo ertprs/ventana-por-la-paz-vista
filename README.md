@@ -1,5 +1,21 @@
 # Programando por la Paz
 
+## To Do list
+
+- [ ] Change carrousel images
+- [ ] Fix footer
+- [ ] Add info to the footer
+- [ ] Fix edit button in shop page
+- [ ] Add an add product button in shop page
+- [ ] Fix colored button in carrousel
+- [ ] Fix like button overlay with sticky header
+- [ ] Add error notification to the login
+- [ ] Add error notification to the signup
+- [ ] Change number type indicative to select
+- [ ] Change number type WhatsApp to tel
+- [ ] Fix Responsive errors
+- [ ] Add visible button to go to admin shop
+
 ## Contribuidores
 
 <table>

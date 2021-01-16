@@ -81,6 +81,6 @@ const Footer = () => {
           color='red'
           icon={'heart'}
         /></span>
-        <span>by <a href='https://www.google.com' className='text-gray-700' target="_blank">PeaceDev</a></span>
+        <span>by <a href='https://www.google.com' className='text-gray-700' target="_blank" rel="noopener noreferrer">PeaceDev</a></span>
     </footer>
 }
