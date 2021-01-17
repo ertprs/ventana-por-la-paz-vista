@@ -34,12 +34,12 @@ export async function Logout() {
     });
 }
 
-export async function CreateProfile( nombre, correo, contraseña ) {
+export async function CreateProfile( nombre, age, correo, contraseña ) {
     const data = {
         nombre,
+        edad : parseInt(age),
         correo,
         contraseña,
-        edad : 18,
     };
     return await API.post('/api/v1/tps/perfiles/', JSON.stringify(data), {
         headers : {

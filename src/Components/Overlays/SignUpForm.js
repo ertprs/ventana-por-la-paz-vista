@@ -1,5 +1,5 @@
 import React from 'react';
-import { InputField, Label } from '../Objects';
+import { InputField, Label, Select } from '../Objects';
 
 export default function SignUpForm(props) {
   // Props
@@ -36,9 +36,20 @@ export default function SignUpForm(props) {
       </div>
 
       {/* TODO: Add age input*/}
+      <Label forHtml='age' label='Edad' />
+
+      <InputField
+        type='number'
+        id='age'
+        name='age'
+        value={form.age}
+        onChange={(e) => handleChange(e)}
+      />
+
       <Label forHtml='email' label='Correo Electronico' />
 
       <InputField
+        type='email'
         id='email'
         name='email'
         placeholder='luisferrer@me.com'
@@ -81,23 +92,19 @@ export default function SignUpForm(props) {
       />
 
       <Label forHtml='indicative' label='Indicativo' />
-
-      <InputField
-        id='indicative'
-        name='indicative'
-        type='number'
-        placeholder='57'
-        value={form.indicative}
-        onChange={(e) => handleChange(e)}
-      />
+      <Select name="indicative" value={form.indicative} onChange={(e) => handleChange(e)}>
+        <option value="">Seleccione un pais</option>
+        <option value="57">+57 | Colombia</option>
+      </Select>
 
       <Label forHtml='whatsapp' label='Whatsapp' />
 
       <InputField
         id='whatsapp'
         name='whatsapp'
-        type='number'
-        placeholder='300889900'
+        type='tel'
+        pattern="[0-9]{3}[0-9]{3}[0-9]{4}" 
+        placeholder='3008899000'
         value={form.whatsapp}
         onChange={(e) => handleChange(e)}
       />

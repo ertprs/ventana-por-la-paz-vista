@@ -8,6 +8,7 @@ export default function SignUpOverlay( props ) {
     const [ form, setForm ] = useState({
         firstname : '',
         lastname : '',
+        age: 0,
         email : '',
         password : '',
         shop : '',
@@ -36,6 +37,7 @@ export default function SignUpOverlay( props ) {
     const validateForm = () => {
         return form.firstname &&
             form.lastname &&
+            form.age &&
             form.email &&
             form.password &&
             form.shop &&
@@ -62,7 +64,22 @@ export default function SignUpOverlay( props ) {
     }, [ idProfile, idShop, switchPage ]);
     
     const handleSignUp = async () => {
-        let shop = await CreateShop(
+        await CreateProfile(
+            `${form.firstname} ${form.lastname}`,
+            form.age,
+            form.email,
+            form.password
+        ).then(( res ) => {
+            if ( res.status !== 201 ) {
+                throw new Error('InvalidResponse');
+            } else {
+                setIdProfile(res.data.id);
+            }
+        }).catch(( er ) => {
+            console.error(er);
+        });
+
+        await CreateShop(
             form.shop,
             form.shopDesc,
             form.indicative,
@@ -73,20 +90,6 @@ export default function SignUpOverlay( props ) {
                 throw new Error('InvalidResponse');
             } else {
                 setIdShop(res.data['id']);
-            }
-        }).catch(( er ) => {
-            console.error(er);
-        });
-        
-        await CreateProfile(
-            `${form.firstname} ${form.lastname}`,
-            form.email,
-            form.password
-        ).then(( res ) => {
-            if ( res.status !== 201 ) {
-                throw new Error('InvalidResponse');
-            } else {
-                setIdProfile(res.data.id);
             }
         }).catch(( er ) => {
             console.error(er);

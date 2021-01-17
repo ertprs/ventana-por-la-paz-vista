@@ -11,10 +11,12 @@
 - [ ] Fix like button overlay with sticky header
 - [ ] Add error notification to the login
 - [ ] Add error notification to the signup
-- [ ] Change number type indicative to select
-- [ ] Change number type WhatsApp to tel
+- [x] Change number type indicative to select
+- [x] Change number type WhatsApp to tel
+- [x] Add age input
 - [ ] Fix Responsive errors
 - [ ] Add visible button to go to admin shop
+- [ ] Real WhatsApp number are not allowed (wait 'til backend fix)
 
 ## Contribuidores
 
