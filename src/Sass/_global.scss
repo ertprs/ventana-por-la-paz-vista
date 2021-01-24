@@ -22,13 +22,8 @@
   overflow-x: hidden;
 }
 
-#root {
-  min-height: 100vh;
-
-  > footer {
-    position: absolute;
-    bottom: 0;
-  }
+.main-content {
+  min-height: 75vh;
 }
 
 //.section-type-scroll::after {

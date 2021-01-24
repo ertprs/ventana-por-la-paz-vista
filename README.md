@@ -3,7 +3,7 @@
 ## To Do list
 
 - [ ] Change carrousel images
-- [ ] Fix footer
+- [x] Fix footer
 - [ ] Add info to the footer
 - [ ] Fix edit button in shop page
 - [ ] Add an add product button in shop page
