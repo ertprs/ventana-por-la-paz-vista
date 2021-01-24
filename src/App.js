@@ -22,7 +22,7 @@ export class App extends Component {
                             render={( props ) => {
                                 return <Fragment>
                                     <Header {...props} />
-                                    <div className={'main-content mb-4'}>
+                                    <div className={'main-content'}>
                                         <Home {...props} />
                                     </div>
                                 </Fragment>
@@ -74,7 +74,7 @@ export class App extends Component {
 
 
 const Footer = () => {
-    return <footer className='w-full h-20 text-gray-600 flex justify-center items-center bg-primary-100'>
+    return <footer className='w-full h-20 mt-3 text-gray-600 flex justify-center items-center bg-primary-100'>
         <span>Made with</span>
         <span><FontAwesomeIcon
           className={'h-12 w-12 mx-2 align-middle'}

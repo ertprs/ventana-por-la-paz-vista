@@ -27,6 +27,11 @@ export class Home extends Component {
                     <ImageCard
                         alt={'hi'}
                         link={'/product'}
+                        curimg={0}
+                    />
+                    <ImageCard
+                        alt={'hi'}
+                        link={'/product'}
                         curimg={1}
                     />
                     <ImageCard
