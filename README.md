@@ -4,7 +4,7 @@
 
 - [X] Change carrousel images
 - [X] Fix footer
-- [ ] Add info to the footer
+- [X] Add info to the footer
 - [ ] Fix edit button in shop page
 - [ ] Add an add product button in shop page
 - [ ] Fix colored button in carrousel
