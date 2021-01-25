@@ -33,9 +33,9 @@ export default function Header( props ) {
         <>
             <div className={'title-header'}>
                 <div/>
-                <div>
+                <Link to={'/'}>
                     ventana por la paz
-                </div>
+                </Link>
                 <Link to='/' className={'icon'}>
                     <img src={Logo} alt='Logo de ventana por la paz' />
                 </Link>
