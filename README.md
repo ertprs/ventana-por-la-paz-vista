@@ -7,7 +7,7 @@
 - [ ] Add info to the footer
 - [ ] Fix edit button in shop page
 - [ ] Add an add product button in shop page
-- [ ] Fix colored button in carrousel
+- [x] Fix colored button in carrousel
 - [ ] Fix like button overlay with sticky header
 - [ ] Add error notification to the login
 - [ ] Add error notification to the signup

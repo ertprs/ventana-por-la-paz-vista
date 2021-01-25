@@ -1,4 +1,4 @@
-import React, { useRef, useState } from 'react';
+import React, { useState } from 'react';
 import { FontAwesomeIcon } from "@fortawesome/react-fontawesome";
 
 export function Section( { title, children, } ) {
@@ -55,7 +55,7 @@ export function Carrousel( { title, children } ) {
                 </span>
                 {/* <span className={'ml-1 underline'}> ver más </span> */}
             </div>
-            <div className={'flex w-full'}>
+            <div className={'flex w-full relative'}>
                 
                 <button
                     className={'section-button btn-secondary left'}
@@ -91,23 +91,24 @@ export function Carrousel( { title, children } ) {
 
 export function ImageCarrousel( { children } ) {
     const [ scrollSteps, setScrollSteps ] = useState(0)
-    const [carrouselWidth, setCarrouselWidth] = useState(window.innerWidth - (35 * 2) - (50 * 2))
+    const [carrouselWidth, setCarrouselWidth] = useState(window.innerWidth - (35 * 2))
     
     function handleScrolling( direction ) {
-        setScrollSteps((scrollSteps+direction)%children.length);
+        let negMod = scrollSteps+direction
+        negMod = negMod%children.length
+        setScrollSteps((negMod+children.length)%children.length);
     }
     
     React.useEffect(() => {
         function handleResize() {
-            setCarrouselWidth(window.innerWidth - (35 * 2) - (50 * 2))
+            setCarrouselWidth(window.innerWidth - (35 * 2))
         }
         window.addEventListener('resize', handleResize)
-        console.log("!")
     })
     
     return (
         <div className={'my-2'}>
-            <div className={'flex '}>
+            <div className={'flex relative'}>
                 
                 <button
                     className={'section-button btn-secondary left'}
