@@ -58,7 +58,7 @@ export function LikeButton() {
   return (
     <div
       className={
-        'h-10 w-10 p-1 mr-2 mt-2 z-10 rounded-full bg-secondary-100 shadow-md flex justify-center items-center duration-200 cursor-pointer'
+        'h-10 w-10 p-1 mr-2 mt-2 rounded-full bg-secondary-100 shadow-md flex justify-center items-center duration-200 cursor-pointer'
       }
       onClick={() => setLiked(!isLiked)}
     >
