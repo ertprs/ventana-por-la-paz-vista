@@ -2,9 +2,9 @@
 
 ## To Do list
 
-- [ ] Change carrousel images
-- [x] Fix footer
-- [ ] Add info to the footer
+- [X] Change carrousel images
+- [X] Fix footer
+- [X] Add info to the footer
 - [ ] Fix edit button in shop page
 - [ ] Add an add product button in shop page
 - [x] Fix colored button in carrousel

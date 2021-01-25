@@ -118,7 +118,7 @@ export function ImageCarrousel( { children } ) {
                 </button>
                 
                 <div
-                    style={{ height : '400px', overflowY : 'hidden' }}
+                    style={{ overflowY : 'hidden' }}
                     className={'section-type-scroll'}
                 >
                     <div
