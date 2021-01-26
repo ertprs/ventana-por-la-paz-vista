@@ -1,16 +1,12 @@
 import React, { Component, Fragment } from 'react';
 import './Sass/app.scss';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import { Home } from './Pages/Home';
-import { ProductPage } from './Pages/ProductPage';
-import { ShopPage } from './Pages/ShopPage';
 import Header from './Components/Header';
 import { Provider } from './AuthContext';
-import { SearchPage } from "./Pages/SearchPage";
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LogoArn from './Assets/images/LogoARN.png'
 import LogoPeace from './Assets/images/LogoPEACEDEV.png'
-
+import { routes } from "./Utils/Routes";
 
 export class App extends Component {
     
@@ -18,59 +14,23 @@ export class App extends Component {
         return (
             <Provider>
                 <BrowserRouter>
-                    <Switch>
-                        <Route
-                            exact path='/'
-                            render={( props ) => {
-                                return <Fragment>
-                                    <Header {...props} />
-                                    <div className={'main-content'}>
-                                        <Home {...props} />
-                                    </div>
-                                </Fragment>
-                            }}
-                        />
-                        
-                        <Route
-                            path='/product'
-                            render={( props ) => {
-                                return <Fragment>
-                                    <Header {...props} />
-                                    <div className={'main-content'}>
-                                        <ProductPage {...props} />
-                                    </div>
-                                </Fragment>
-                            }}
-                        />
-                        
-                        <Route
-                            path='/shop'
-                            render={( props ) => {
-                                return <Fragment>
-                                    <Header {...props} />
-                                    <div className={'main-content'}>
-                                        <ShopPage {...props} />
-                                    </div>
-                                </Fragment>
-                            }}
-                        />
-                        
-                        <Route
-                            path='/search/:search_params'
-                            render={( props ) => {
-                                return <Fragment>
-                                    <Header {...props} />
-                                    <div className={'main-content'}>
-                                        <SearchPage {...props} />
-                                    </div>
-                                </Fragment>
-                            }}
-                        />
-                    </Switch>
+                    <Header />
+                    
+                    <div className={'main-content'}>
+                        <Switch>
+                            {routes.map(( item, i ) => (
+                                <Route
+                                    {...item}
+                                    key={i}
+                                />
+                            ))}
+                        </Switch>
+                    </div>
+                    
+                    <Footer />
                 </BrowserRouter>
-                <Footer />
             </Provider>
-        );
+        )
     }
 }
 
@@ -105,12 +65,12 @@ const Footer = () => {
         <p className='text-center'>
             Hecho con
             <span>
-                <FontAwesomeIcon
-                    className={'h-12 w-12 mx-2 align-middle'}
-                    color='red'
-                    icon={'heart'}
-                />
-            </span>
+        <FontAwesomeIcon
+            className={'h-12 w-12 mx-2 align-middle'}
+            color='red'
+            icon={'heart'}
+        />
+        </span>
             por
             <a
                 href='https://www.peacedev.co'
