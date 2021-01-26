@@ -20,7 +20,7 @@ export const routes = [
     },
     
     {
-        path : '/shop',
+        path : '/shop/:shop_id',
         exact : false,
         render : ( props ) => {
             return <ShopPage {...props} />

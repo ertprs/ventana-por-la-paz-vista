@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import './Sass/app.scss';
+import './Sass/global.scss';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
 import { Header } from './Components/Header';
 import { Provider } from './AuthContext';
