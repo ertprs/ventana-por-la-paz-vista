@@ -64,7 +64,7 @@ function TopHeaderBar() {
     </div>
 }
 
-function BottomHeaderBar( { history, setLoginModal, endSession, setSignupModal } ) {
+function BottomHeaderBar( { setLoginModal, endSession, setSignupModal } ) {
     return <header style={{ marginLeft : '35px', marginRight : '35px' }}
                    className={'my-4 flex sm:justify-between items-center'}>
         <nav className={'flex flex-grow items-center'}>

@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Section } from '../Components/Section';
-import { ProductCard, ShopCard } from '../Components/Cards';
+import { ShopCard } from '../Components/Cards';
 import { SearchShops } from "../Services/Api";
 
 export class SearchPage extends Component {
@@ -34,14 +34,14 @@ export class SearchPage extends Component {
             <>
                 <Section title={'Resultados de Busqueda'}>
                     {
-                        shopList.map(( item, i ) => {
-                            return <ShopCard
+                        shopList.map(( item, i ) => (
+                            <ShopCard
                                 description={item.descripcion}
                                 name={item.nombre}
                                 key={i}
                                 shop_id={item.id}
                             />
-                        })
+                        ))
                     }
                 </Section>
             </>

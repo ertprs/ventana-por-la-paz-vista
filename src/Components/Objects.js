@@ -19,7 +19,7 @@ export function InputField({
   styles,
   id,
   name,
-  value,
+  value='', // prevent uncontrolled/controlled warning
   onChange,
   placeholder,
   type = 'text',
