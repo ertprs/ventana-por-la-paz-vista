@@ -8,7 +8,7 @@
 - [ ] Fix edit button in shop page
 - [ ] Add an add product button in shop page
 - [x] Fix colored button in carrousel
-- [ ] Fix like button overlay with sticky header
+- [X] Fix like button overlay with sticky header
 - [ ] Add error notification to the login
 - [ ] Add error notification to the signup
 - [x] Change number type indicative to select
