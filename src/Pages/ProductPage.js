@@ -3,7 +3,7 @@ import { Link } from 'react-router-dom';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 
 import { Section } from '../Components/Section';
-import ProductCard from '../Components/ProductCard';
+import { ProductCard } from '../Components/Cards';
 import { LikeButton } from '../Components/Objects';
 import CreateProductOverlay from '../Components/Overlays/CreateProductOverlay';
 

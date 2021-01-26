@@ -1,6 +1,6 @@
 import React, { Component } from 'react';
 import { Carrousel, ImageCarrousel } from '../Components/Section';
-import ProductCard from '../Components/ProductCard';
+import { ShopCard } from '../Components/Cards';
 import { ImageCard } from "../Components/ImageCard";
 import { FetchShops } from "../Services/Api";
 
@@ -44,11 +44,11 @@ export class Home extends Component {
                     {
                         shopList?
                         shopList.map(( item, i ) => {
-                            return <ProductCard
+                            return <ShopCard
                                 description={item.descripcion}
-                                shop={true}
                                 name={item.nombre}
                                 key={i}
+                                shop_id={item.id}
                             />
                         }):
                         <></>

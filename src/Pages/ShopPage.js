@@ -1,7 +1,7 @@
 import React, { useState } from 'react';
 import { LikeButton } from '../Components/Objects';
 import { Section } from '../Components/Section';
-import ProductCard from '../Components/ProductCard';
+import { ProductCard } from '../Components/Cards';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import EditShopOverlay from '../Components/Overlays/EditShopOverlay';
 import { Consumer } from '../AuthContext';
