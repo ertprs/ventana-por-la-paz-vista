@@ -1,7 +1,7 @@
-import React, { Component, Fragment } from 'react';
+import React, { Component } from 'react';
 import './Sass/app.scss';
 import { Route, Switch, BrowserRouter } from 'react-router-dom';
-import Header from './Components/Header';
+import { Header } from './Components/Header';
 import { Provider } from './AuthContext';
 import { FontAwesomeIcon } from '@fortawesome/react-fontawesome';
 import LogoArn from './Assets/images/LogoARN.png'

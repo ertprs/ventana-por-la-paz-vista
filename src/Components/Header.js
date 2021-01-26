@@ -7,7 +7,7 @@ import { Link } from 'react-router-dom';
 import { Consumer } from '../AuthContext';
 import { Logout } from '../Services/Api';
 
-export default function Header() {
+export function Header() {
     // State
     const [ loginModal, setLoginModal ] = useState(false);
     const [ signupModal, setSignupModal ] = useState(false);
